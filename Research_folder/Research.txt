@@ -1,1 +1,24 @@
+Celem jest stworzenie aplikacji zajmującej sie sprzedażą e biletów
+ui
 
+Patrząc na strony które spełniają to zadanie zaobserwowałem elemnty które były by przdatne
+1 opcja zmiany języka dla klienta
+2 do zakupy e biletu nie jest wymagane logowanie
+3 Są różne rodzaje do sprzedaży
+4 są kategorie dzięki którym można szukać
+5 jest opcja szukajki
+6 da sie wybrać po dacie oraz lokalizacji
+7 na wejściu widać popularne lub częstwo wybierane opcje
+8 przyciski sie wyświtlają dla lepszej widoczności
+9proponowane opcje już w menu dizelą sie na najważniejsze kategorie
+
+
+dodatki
+obserwacji swoich strony są jasne dlatego można by było dodaćtryb jasny i ciemny y ułatwić życie klientowi
+
+ux
+strony w internecie mają przyciągający wygląd używając np gradientów oraz w miare prostej kolorystyki z dodaniem głębi w postaci cieni
+1 używa sie różnych trzcionek i stylów w różnych miejscach na stronie a nie jeden styl co sprawia że strona mniej powtarzalna
+2 w kategoriach nie trzeba klikać na daną rzecz ponoeważ niektóe informacje o tym są już wyświetlana z poziomu menu
+3 po najechaniu pokazują sie dodatkowe info a więc nie trzeba wchodzić i wychodzić a dodatkowo nie marjnuje miejsca by każde sie wyświetlało i tudniej sie szuakało najwazniejszych info
+4 podświetlające sie przyciski polepszają wygląd i łatwiej śledzić albo szuakć

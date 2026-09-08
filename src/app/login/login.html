@@ -1,0 +1,24 @@
+<!-- Główny przycisk na stronie -->
+<button class="otworz-btn" (click)="kliknijPrzycisk()">Zaloguj się</button>
+
+<!-- Okienko logowania (Modal) -->
+@if (pokazFormularz) {
+  <div class="tlo-modala">
+    
+    <div class="karta-modala">
+      <h2>Logowanie</h2>
+      
+      <div class="pole">
+        <input type="email" placeholder="Adres e-mail">
+      </div>
+      
+      <div class="pole">
+        <input type="password" placeholder="Hasło">
+      </div>
+      
+      <button class="zaloguj-btn">Zaloguj</button>
+      <button class="zamknij-btn" (click)="kliknijPrzycisk()">Anuluj</button>
+    </div>
+
+  </div>
+}

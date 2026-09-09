@@ -1,0 +1,72 @@
+#główny{
+  background-color: darkorange;
+  border: 2px solid orange;
+  width: 800px;
+  height: 120px;
+  border-radius: 30px;
+margin: 0 auto;
+
+  padding: 10px;
+  display: flex;
+  position: relative;
+}
+
+#link_do_biletów
+{
+background-color: white;
+  border: 2px solid orange;
+color: orange;
+  text-decoration: none;
+  width: 140px;
+  height: 40px;
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+}
+
+#logo{
+
+
+}
+
+.przycisk_główny
+{
+  height: 50px;
+  background-color:darkorange;
+  color: white;
+  border: none;
+float: right;
+
+}
+.linia_pionowa
+{
+  /*float: right;*/
+  margin: 20px;
+  height: 30px;
+  width: 4px;
+  background-color: orange;
+
+  right: 0px;
+/*position: absolute;*/
+
+}
+
+#linia_pozioma
+{
+  position: absolute;
+  margin-top: 50px;
+  right: 0px;
+  /*margin: 20px;*/
+  margin-right: 20px;
+  height: 4px;
+  width: 500px;
+  background-color: orange;
+
+}
+/*do tekstu na głównej stornie*/
+h1{
+  color: white;
+  font-weight: bold;
+
+}

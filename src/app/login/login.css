@@ -1,20 +1,31 @@
 /* Przycisk startowy */
 .otworz-btn {
-  padding: 12px 24px;
+  /*padding: 12px 24px;*/
   font-size: 16px;
   cursor: pointer;
+
+  /*dopiski od DM*/
+  border: 1px solid orange;
+  color: orange;
+  border-radius: 10px;
+  height: 50px;
+  width: 140px;
+ align:left;
+
+  /*right: 10px;*/
+  /*position: absolute;*/
 }
 
 /* Ciemne tło na cały ekran (zamiast fioletowego) */
 .tlo-modala {
   position: fixed;
-  top: 0; 
-  left: 0; 
-  width: 100vw; 
+  top: 0;
+  left: 0;
+  width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.5); 
-  display: flex; 
-  justify-content: center; 
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
   align-items: center;
   font-family: sans-serif;
 }
@@ -23,7 +34,7 @@
 .karta-modala {
   background: white;
   padding: 30px;
-  border-radius: 16px; 
+  border-radius: 16px;
   width: 320px;
   text-align: center;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
@@ -50,7 +61,7 @@
 .zaloguj-btn {
   width: 100%;
   padding: 12px;
-  background: #007bff; 
+  background: #007bff;
   color: white;
   border: none;
   border-radius: 8px;

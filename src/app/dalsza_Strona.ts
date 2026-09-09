@@ -1,9 +1,9 @@
 import { Component, signal } from '@angular/core';
-import { Login} from './login/login';
+import { Login } from './login/login';
 
 @Component({
   imports: [Login],
-  selector: 'app-root',
+  selector: 'dalsze_menu-root',
   styleUrls: ['./app.css', './Wygląd.css'],
   //styleUrl: './Wygląd.css',
   templateUrl: './app.html',
@@ -11,4 +11,3 @@ import { Login} from './login/login';
 export class App {
   protected readonly title = signal('Demo');
 }
-

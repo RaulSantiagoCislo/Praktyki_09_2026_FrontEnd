@@ -1,46 +1,32 @@
-<!--<h1>Hello, World!</h1>-->
-
-<header>  </header>
+<header></header>
 <nav>
-  <section id="tło"> <!-- zbędne -->
-  <section id="główny">
+  <section id="tło">
+    <section id="główny">
 
-    <section>
-      <img src="https://images.seeklogo.com/logo-png/36/2/global-logic-logo-png_seeklogo-360371.png" width="100" height="100" >
+      <section>
+        <img src="https://images.seeklogo.com/logo-png/36/2/global-logic-logo-png_seeklogo-360371.png" width="100" height="100">
+      </section>
+
+      <section class="linia_pionowa"></section>
+      <button class="przycisk_główny">Tryb jasny</button>
+
+      <section class="linia_pionowa"></section>
+      <button class="przycisk_główny">Pomoc</button>
+
+      <section id="linia_pozioma"></section>
+
+      <section id="link_do_biletów">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Ikona_bilety.png?utm_source=pl.wikipedia.org&utm_campaign=index&utm_content=original" width="50px" height="50px">
+        <a href="dalsze_menu">Przejdź do e-biletów</a>
+      </section>
+
+      <app-rejestr #rejestrComp></app-rejestr>
+      <app-login (otwórzRejestrację)="rejestrComp.otworzOkno()"></app-login>
+
     </section>
-
-
-    <section class="linia_pionowa"></section>
-
-    <button class="przycisk_główny">Tryb jasny</button>
-    <section class="linia_pionowa"></section>
-
-    <button class="przycisk_główny">Pomoc</button>
-    <section class="linia_pionowa"></section>
-    <!-- dodać click-->
-    <button class="przycisk_główny" >.</button><!--  (click)="Zmien_jezyk()"-->
-
-    <section id="linia_pozioma">
-
-    </section>
-
-
-    <app-login></app-login>
-    <section id="link_do_biletów" >
-    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Ikona_bilety.png?utm_source=pl.wikipedia.org&utm_campaign=index&utm_content=original" width="50px" height="50px">
-    <a href="dalsze_menu">Przejdź do e-biletów</a>
-  </section>
-
-
-  </section>
-
-
-
-
   </section>
 </nav>
 
 <main>
-  <h1> Już dziś zorganizuj swój dzień z Global Logic e-bilet</h1>
-
+  <h1>Już dziś zorganizuj swój dzień z Global Logic e-bilet</h1>
 </main>

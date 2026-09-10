@@ -1,26 +1,18 @@
-<!-- Główny przycisk na stronie -->
-<!--<button class="otworz-btn" (click)="kliknijPrzyciskR()">Zajerestruj się</button>-->
-
-<!-- Okienko logowania (Modal) -->
-<!--
 @if (pokazFormularzRejestru) {
-  <div class="tlo-modala">
-
-    <div class="karta-modala">
-      <h2>Logowanie</h2>
-
-      <div class="pole">
-        <input type="email" placeholder="Adres e-mail">
-      </div>
-
-      <div class="pole">
-        <input type="password" placeholder="Hasło">
-      </div>
-
-      <button class="zaloguj-btn">Zaloguj</button>
-      <button class="zamknij-btn" (click)="kliknijPrzyciskR()">Anuluj</button>
+  <div class="modal-overlay">
+    <div class="modal-box">
+      <h2>Rejestracja</h2>
+      
+      <form (submit)="$event.preventDefault()">
+        <input type="text" placeholder="Imię" required class="input-field">
+        <input type="text" placeholder="Nazwisko" required class="input-field">
+        <input type="email" placeholder="Adres e-mail" required class="input-field">
+        <input type="tel" placeholder="Numer telefonu" required class="input-field">
+        <input type="password" placeholder="Hasło" required class="input-field">
+        
+        <button type="submit" class="btn-primary">Zarejestruj</button>
+        <button type="button" class="btn-secondary" (click)="zamknijOkno()">Anuluj</button>
+      </form>
     </div>
-
   </div>
 }
--->

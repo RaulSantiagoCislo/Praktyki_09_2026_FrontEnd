@@ -1,8 +1,9 @@
 import { Component, signal } from '@angular/core';
-import { Login} from './login/login';
+import { Login } from './login/login';
+import { Rejestr } from './rejestr';
 
 @Component({
-  imports: [Login],
+  imports: [Login, Rejestr],
   selector: 'app-root',
   styleUrls: ['./app.css', './Wygląd.css'],
   //styleUrl: './Wygląd.css',
@@ -11,4 +12,3 @@ import { Login} from './login/login';
 export class App {
   protected readonly title = signal('Demo');
 }
-

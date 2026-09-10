@@ -8,11 +8,16 @@ import { Component } from '@angular/core';
   styleUrl: './login.css'
 })
 export class Login {
-  // UWAGA: Zmienna i funkcja muszą być DOKŁADNIE tutaj, między nawiasami { }
-  
-  pokazFormularz = false;
+  pokazLogowanie = false;
+  pokazRejestracja = false;
 
-  kliknijPrzycisk() {
-    this.pokazFormularz = !this.pokazFormularz;
+  przelaczLogowanie() {
+    this.pokazLogowanie = !this.pokazLogowanie;
+    this.pokazRejestracja = false;
+  }
+
+  przelaczRejestracje() {
+    this.pokazRejestracja = !this.pokazRejestracja;
+    this.pokazLogowanie = false;
   }
 }

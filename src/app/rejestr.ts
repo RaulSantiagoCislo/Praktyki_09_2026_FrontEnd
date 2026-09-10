@@ -1,18 +1,20 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-rejestr',
   standalone: true,
   imports: [],
   templateUrl: './Rejestr.html',
   styleUrl: './rejestr.css',
 })
 export class Rejestr {
-  // UWAGA: Zmienna i funkcja muszą być DOKŁADNIE tutaj, między nawiasami { }
-
   pokazFormularzRejestru = false;
 
-  kliknijPrzycisk() {
-    this.pokazFormularzRejestru = !this.pokazFormularzRejestru;
+  otworzOkno() {
+    this.pokazFormularzRejestru = true;
+  }
+
+  zamknijOkno() {
+    this.pokazFormularzRejestru = false;
   }
 }

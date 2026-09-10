@@ -1,6 +1,5 @@
 /* Przycisk startowy */
 .otworz-btn {
-  /*padding: 12px 24px;*/
   font-size: 16px;
   cursor: pointer;
 
@@ -10,17 +9,19 @@
   border-radius: 10px;
   height: 50px;
   width: 140px;
- /*float:right;*/
 
   right: 10px;
   position: absolute;
-  /*position: relative;*/
-  /*position: static;*/
   top: 70px;
 }
 
-/* Ciemne tło na cały ekran (zamiast fioletowego) */
-.tlo-modala {
+#lekko_w_prawo {
+  right: 155px;
+}
+
+/* Ciemne tło na cały ekran */
+.tlo-modala,
+.modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -31,10 +32,12 @@
   justify-content: center;
   align-items: center;
   font-family: sans-serif;
+  z-index: 1000;
 }
 
-/* Biała karta z zaokrągleniami jak na projekcie */
-.karta-modala {
+/* Biała karta z zaokrągleniami */
+.karta-modala,
+.modal-box {
   background: white;
   padding: 30px;
   border-radius: 16px;
@@ -43,14 +46,16 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-.karta-modala h2 {
+.karta-modala h2,
+.modal-box h2 {
   margin-top: 0;
   margin-bottom: 25px;
   font-size: 22px;
 }
 
 /* Pola formularza */
-.pole input {
+.pole input,
+.input-field {
   width: 100%;
   padding: 12px;
   margin-bottom: 15px;
@@ -58,10 +63,12 @@
   border-radius: 8px;
   box-sizing: border-box;
   font-size: 14px;
+  outline: none;
 }
 
-/* Niebieski przycisk logowania */
-.zaloguj-btn {
+/* Główny przycisk akcji (niebieski) */
+.zaloguj-btn,
+.btn-primary {
   width: 100%;
   padding: 12px;
   background: #007bff;
@@ -73,8 +80,9 @@
   margin-bottom: 10px;
 }
 
-/* Szary przycisk powrotu */
-.zamknij-btn {
+/* Przycisk powrotu / Anuluj (szary) */
+.zamknij-btn,
+.btn-secondary {
   width: 100%;
   padding: 12px;
   background: transparent;

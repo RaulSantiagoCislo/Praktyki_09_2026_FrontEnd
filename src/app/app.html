@@ -18,7 +18,9 @@
     <button class="przycisk_główny">Pomoc</button>
     <section class="linia_pionowa"></section>
     <!-- dodać click-->
-    <button class="przycisk_główny" >.</button><!--  (click)="Zmien_jezyk()"-->
+    <button class="przycisk_główny" (click)="pokazJezyki()">Polski</button><!--  (click)="Zmien_jezyk()"-->
+
+
 
     <section id="linia_pozioma">
 
@@ -36,11 +38,15 @@
 
 
 
-
   </section>
 </nav>
 
 <main>
   <h1> Już dziś zorganizuj swój dzień z Global Logic e-bilet</h1>
+
+  @if (pokazJezykiOkno) {
+    <app-zjezyki></app-zjezyki>
+  }
+
 
 </main>

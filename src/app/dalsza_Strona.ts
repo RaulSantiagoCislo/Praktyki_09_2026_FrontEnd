@@ -5,8 +5,7 @@ import { Login } from './login/login';
   imports: [Login],
   selector: 'dalsze_menu-root',
   styleUrls: ['./app.css', './Wygląd.css'],
-  //styleUrl: './Wygląd.css',
-  templateUrl: './app.html',
+  templateUrl: './dalsze_menu.html',
 })
 export class App {
   protected readonly title = signal('Demo');

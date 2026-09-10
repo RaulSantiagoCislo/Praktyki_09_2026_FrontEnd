@@ -10,10 +10,13 @@
   border-radius: 10px;
   height: 50px;
   width: 140px;
- align:left;
+ /*float:right;*/
 
-  /*right: 10px;*/
-  /*position: absolute;*/
+  right: 10px;
+  position: absolute;
+  /*position: relative;*/
+  /*position: static;*/
+  top: 70px;
 }
 
 /* Ciemne tło na cały ekran (zamiast fioletowego) */

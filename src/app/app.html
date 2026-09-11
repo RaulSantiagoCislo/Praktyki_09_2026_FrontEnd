@@ -28,10 +28,11 @@
 
 
     <app-login></app-login>
-    <section id="link_do_biletów" >
+    <button id="link_do_biletów" (click)="pokazG2()">
     <img src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Ikona_bilety.png?utm_source=pl.wikipedia.org&utm_campaign=index&utm_content=original" width="50px" height="50px">
-    <a href="dalsze_menu">Przejdź do e-biletów</a>
-  </section>
+<!--<a href="dalsze_menu">Przejdź do e-biletów</a>-->
+      Przejdź do e-biletów
+  </button>
 
 
   </section>
@@ -42,7 +43,15 @@
 </nav>
 
 <main>
+
+
+  @if(Pokaz_TekstStronyGlownej == true){
   <h1> Już dziś zorganizuj swój dzień z Global Logic e-bilet</h1>
+  }
+
+
+
+
 
   @if (pokazJezykiOkno && !pokazUstawieniaOkno) {
     <app-zjezyki (zmianaJezyka)="zmienJezyk($event)"></app-zjezyki>
@@ -53,6 +62,11 @@
   @if (pokazUstawieniaOkno && !pokazJezykiOkno) {
     <app-ustawienia></app-ustawienia>
   }
+
+  @if (pokazStronaG2) {
+    <app-strona-g2></app-strona-g2>
+  }
+
 
 </main>
 <!--@if (pokazJezykiOkno && !pokazUstawieniaOkno && !pokazLogowanieOkno) {-->

@@ -12,7 +12,6 @@ import { Ustawienia } from './ustawienia/ustawienia';
 export class App {
   protected readonly title = signal('Demo');
 
-  // Okno wyboru języka
   pokazJezykiOkno = false;
 
   pokazJezyki() {

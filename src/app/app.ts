@@ -12,22 +12,30 @@ import { Ustawienia } from './ustawienia/ustawienia';
 export class App {
   protected readonly title = signal('Demo');
 
+
+
+  // tutaj mi zamienia okna ustawień i jezyka by sie zamieniały
   pokazJezykiOkno = false;
 
   pokazJezyki() {
+    if (this.pokazUstawieniaOkno) {
+      this.pokazUstawieniaOkno = false;
+    }
+
     this.pokazJezykiOkno = !this.pokazJezykiOkno;
   }
-
 
   pokazUstawieniaOkno = false;
 
   pokazUstawienia() {
+    if (this.pokazJezykiOkno) {
+      this.pokazJezykiOkno = false;
+    }
+
     this.pokazUstawieniaOkno = !this.pokazUstawieniaOkno;
   }
 
-
   wybranyJezyk = 'Polski';
-
 
   // PolskiJe = '';
   // AngielskiJe = '';
@@ -37,30 +45,30 @@ export class App {
   zmienJezyk(jezyk: string) {
     this.wybranyJezyk = jezyk;
 
-  //   if (jezyk === 'Polski') {
-  //     this.PolskiJe = 'Polski';
-  //     this.AngielskiJe = 'Polish';
-  //     this.NiemieckiJe = '';
-  //   }
-  //
-  //   if (jezyk === 'Angielski') {
-  //     this. = '';
-  //     this. = '';
-  //     this. = '';
-  //   }
-  //
-  //
-  //
-  //   if (jezyk === 'Niemiecki') {
-  //     this. = '';
-  //     this. = '';
-  //     this. = '';
-  //   }
-  //
-  //   if (jezyk === 'Francuski') {
-  //     this. = '';
-  //     this. = '';
-  //     this. = '';
-  //   }
+    //   if (jezyk === 'Polski') {
+    //     this.PolskiJe = 'Polski';
+    //     this.AngielskiJe = 'Polish';
+    //     this.NiemieckiJe = '';
+    //   }
+    //
+    //   if (jezyk === 'Angielski') {
+    //     this. = '';
+    //     this. = '';
+    //     this. = '';
+    //   }
+    //
+    //
+    //
+    //   if (jezyk === 'Niemiecki') {
+    //     this. = '';
+    //     this. = '';
+    //     this. = '';
+    //   }
+    //
+    //   if (jezyk === 'Francuski') {
+    //     this. = '';
+    //     this. = '';
+    //     this. = '';
+    //   }
   }
 }

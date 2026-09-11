@@ -44,13 +44,18 @@
 <main>
   <h1> Już dziś zorganizuj swój dzień z Global Logic e-bilet</h1>
 
-  @if (pokazJezykiOkno) {
+  @if (pokazJezykiOkno && !pokazUstawieniaOkno) {
     <app-zjezyki (zmianaJezyka)="zmienJezyk($event)"></app-zjezyki>
   }
 
 
-  @if (pokazUstawieniaOkno) {
+
+  @if (pokazUstawieniaOkno && !pokazJezykiOkno) {
     <app-ustawienia></app-ustawienia>
   }
 
 </main>
+<!--@if (pokazJezykiOkno && !pokazUstawieniaOkno && !pokazLogowanieOkno) {-->
+<!--  <app-zjezyki></app-zjezyki>-->
+<!--}-->
+<!--przykład-->

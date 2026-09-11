@@ -2,12 +2,12 @@ import { Component, signal } from '@angular/core';
 import { Login } from './login/login';
 import { Zjezyki } from './zjezyki/zjezyki';
 import { Ustawienia } from './ustawienia/ustawienia';
-import { StronaG2 } from './StronaG2/StronaG2';
+import { StronaG2 } from './strona-g2/strona-g2';
 
 @Component({
   imports: [Login, Zjezyki, Ustawienia, StronaG2],
   selector: 'app-root',
-  styleUrls: ['./app.css', './Wygląd.css'],
+  styleUrls: ['./app.css', './Wyglad.css'],
   templateUrl: './app.html',
 })
 export class App {
@@ -15,13 +15,17 @@ export class App {
 
   // tekst powitania na stronie
   Pokaz_TekstStronyGlownej = true;
+  pokazG2() {
+    this.pokazStronaG2 = true;
+    this.Pokaz_TekstStronyGlownej = false;
+  }
 
   // Strona G2
   pokazStronaG2 = false;
 
-  pokazG2() {
-    this.pokazStronaG2 = true;
-  }
+  // pokazG2() {
+  //   this.pokazStronaG2 = true;
+  // }
 
   // tutaj mi zamienia okna ustawień i jezyka by sie zamieniały
   pokazJezykiOkno = false;

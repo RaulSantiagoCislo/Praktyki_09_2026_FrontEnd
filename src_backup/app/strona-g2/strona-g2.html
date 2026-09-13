@@ -1,0 +1,25 @@
+<!--<p>strona-g2 works!</p>-->
+
+<button class="dalsze" id="dalsze1" (click)="pokazPodroz()">Podróż</button>
+
+
+<br>
+<button class="dalsze" id="dalsz2" (click)="pokazRozrywke()">Rozrywka</button>
+
+
+<br>
+<button class="dalsze" id="dalsze3" (click)="pokazKulture()">Kultura</button>
+
+
+@if (pokazany === 'podroz') {
+  <app-podroz></app-podroz>
+}
+
+@if (pokazany === 'rozrywka') {
+  <app-rozrywka></app-rozrywka>
+}
+
+@if (pokazany === 'kultura') {
+  <app-kultura></app-kultura>
+}
+

@@ -1,0 +1,94 @@
+#główny{
+  background-color: darkorange;
+  border: 2px solid orange;
+  width: 90%;
+  height: 120px;
+  border-radius: 30px;
+margin: 0 auto;
+
+  padding: 10px;
+  display: flex;
+  position: relative;
+
+
+  gap: 30px;
+}
+
+#link_do_biletów
+{
+background-color: white;
+  border: 2px solid orange;
+color: orange !important;
+  text-decoration: none !important;
+  width: 140px;
+  height: 40px;
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  /*position: relative;*/
+top: 70px;
+position: absolute;
+  right: 300px;
+
+
+/*  width: 100%;*/
+/padding: 12px;
+/*background: #007bff;*/
+/*color: white;*/
+/*border: none;*/
+/*border-radius: 8px;*/
+/*cursor: pointer;*/
+/*font-weight: bold;*/
+/*margin-bottom: 10px;*/
+
+}
+
+#logo{
+/*nic*/
+
+}
+
+.przycisk_główny
+{
+  height: 50px;
+  background-color:darkorange;
+  color: white;
+  border: none;
+float: right;
+  right: 0px;
+  /*position: absolute;*/
+
+}
+.linia_pionowa
+{
+  /*float: right;*/
+  margin: 20px;
+  height: 30px;
+  width: 4px;
+  background-color: orange;
+
+  right: 0px;
+position: relative;
+
+}
+
+#linia_pozioma
+{
+  position: absolute;
+  margin-top: 50px;
+  right: 0px;
+  /*margin: 20px;*/
+  margin-right: 40px;
+  height: 4px;
+  /*width było 500 wcześneij*/
+  width: 86%;
+  background-color: orange;
+
+}
+/*do tekstu na głównej stornie*/
+h1{
+  color: white;
+  font-weight: bold;
+
+}

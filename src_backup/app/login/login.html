@@ -1,0 +1,39 @@
+<!-- Główny przycisk na stronie -->
+<!--Dodałem tu na rejestracje ale tylko button   trzeb pozmieniać click i inne czhyba-->
+<style>
+  #lekko_w_prawo{
+    right: 155px;
+  }
+</style>
+
+<button class="otworz-btn" id="lekko_w_prawo"  (click)="kliknijPrzycisk()">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwZRwSpYHN1ES36Aa8WoUvi14NFSFc6TZG633kVuS4Qg&s=10" width="30%" height="50%">
+  Zajerestruj się
+</button>
+
+<button class="otworz-btn" (click)="kliknijPrzycisk()">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwZRwSpYHN1ES36Aa8WoUvi14NFSFc6TZG633kVuS4Qg&s=10" width="30%" height="50%">
+  Zaloguj się
+</button>
+
+<!-- Okienko logowania (Modal) -->
+@if (pokazFormularz) {
+  <div class="tlo-modala">
+
+    <div class="karta-modala">
+      <h2>Logowanie</h2>
+
+      <div class="pole">
+        <input type="email" placeholder="Adres e-mail">
+      </div>
+
+      <div class="pole">
+        <input type="password" placeholder="Hasło">
+      </div>
+
+      <button class="zaloguj-btn">Zaloguj</button>
+      <button class="zamknij-btn" (click)="kliknijPrzycisk()">Anuluj</button>
+    </div>
+
+  </div>
+}

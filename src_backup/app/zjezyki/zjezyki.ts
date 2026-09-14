@@ -7,9 +7,9 @@ import { Component, Output, EventEmitter } from '@angular/core';
   templateUrl: './zjezyki.html',
 })
 export class Zjezyki {
-  @Output() zmianaJezyka = new EventEmitter<string>();
+  @Output() ChangingLanguage = new EventEmitter<string>();
 
-  wybranyJezyk = 'Polski';
+  ChosenLanguage = 'Polski';
 
   PolskiJe = 'Polski';
   AngielskiJe = 'Angielski';
@@ -17,8 +17,8 @@ export class Zjezyki {
   FrancuskiJe = 'Francuski';
 
   wybierzJezyk(jezyk: string) {
-    this.wybranyJezyk = jezyk;
-    this.zmianaJezyka.emit(jezyk);
+    this.ChosenLanguage = jezyk;
+    this.ChangingLanguage.emit(jezyk);
 
     if (jezyk === 'Polski') {
       this.PolskiJe = 'Polski';

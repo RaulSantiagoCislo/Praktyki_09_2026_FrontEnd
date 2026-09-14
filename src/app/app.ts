@@ -33,7 +33,7 @@ export class App {
     this.ShowSettings_Window = !this.ShowSettings_Window;
   }
 
-  wybranyJezyk = 'Polski';
+  ChosenLanguage = 'Polski';
 
   // PolskiJe = '';
   // AngielskiJe = '';
@@ -41,7 +41,7 @@ export class App {
   // FrancuskiJe =
 
   zmienJezyk(jezyk: string) {
-    this.wybranyJezyk = jezyk;
+    this.ChosenLanguage = jezyk;
 
     //   if (jezyk === 'Polski') {
     //     this.PolskiJe = 'Polski';

@@ -18,7 +18,7 @@
     <button class="przycisk_główny" (click)="ShowSettings()">Pomoc</button>
     <section class="linia_pionowa"></section>
     <!-- dodać click-->
-    <button class="przycisk_główny" (click)="ShowLanguage()">{{ wybranyJezyk }}</button><!--  (click)="Zmien_jezyk()"-->
+    <button class="przycisk_główny" (click)="ShowLanguage()">{{ ChosenLanguage }}</button><!--  (click)="Zmien_jezyk()"-->
 
 
 
@@ -54,7 +54,7 @@
 
 
   @if (ShowLanguage_Window && !ShowSettings_Window) {
-    <app-zjezyki (zmianaJezyka)="zmienJezyk($event)"></app-zjezyki>
+    <app-zjezyki (ChangingLanguage)="zmienJezyk($event)"></app-zjezyki>
   }
 
 

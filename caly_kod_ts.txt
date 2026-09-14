@@ -16,7 +16,7 @@ import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
-    
+
   ]
 };
 
@@ -53,12 +53,12 @@ describe('App', () => {
 
 import { Component, signal } from '@angular/core';
 import { Login } from './login/login';
-import { Zjezyki } from './zjezyki/zjezyki';
-import { Ustawienia } from './ustawienia/ustawienia';
+import { Ch1Language } from './zjezyki/zjezyki';
+import { Settings } from './ustawienia/ustawienia';
 import { StronaG2 } from './strona-g2/strona-g2';
 
 @Component({
-  imports: [Login, Zjezyki, Ustawienia, StronaG2],
+  imports: [Login, Ch1Language, Settings, StronaG2],
   selector: 'app-root',
   styleUrls: ['./app.css', './Wyglad.css'],
   templateUrl: './app.html',
@@ -140,7 +140,7 @@ export class App {
 }
 
 
-===== C:\Users\damian.malawko\Desktop\Projekt 1111\src\app\dalsza_Strona.ts =====
+===== C:\Users\damian.malawko\Desktop\Projekt 1111\src\app\Later_Menu.ts =====
 
 import { Component, signal } from '@angular/core';
 import { Login } from './login/login';
@@ -178,7 +178,7 @@ export class Rejestr {
 }
 
 
-===== C:\Users\damian.malawko\Desktop\Projekt 1111\src\app\Wygląd.ts =====
+===== C:\Users\damian.malawko\Desktop\Projekt 1111\src\app\View.ts =====
 
 import { Component } from '@angular/core';
 
@@ -276,7 +276,7 @@ import { Component } from '@angular/core';
 })
 export class Login {
   // UWAGA: Zmienna i funkcja muszÄ… byÄ‡ DOKÅADNIE tutaj, miÄ™dzy nawiasami { }
-  
+
   pokazFormularz = false;
 
   kliknijPrzycisk() {
@@ -415,21 +415,21 @@ export class StronaG2 {
 }
 
 
-===== C:\Users\damian.malawko\Desktop\Projekt 1111\src\app\ustawienia\ustawienia.spec.ts =====
+===== C:\Users\damian.malawko\Desktop\Projekt 1111\src\app\ustawienia\Settings.spec.ts =====
 
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { Ustawienia } from './ustawienia';
+import { Settings } from './ustawienia';
 
-describe('Ustawienia', () => {
-  let component: Ustawienia;
-  let fixture: ComponentFixture<Ustawienia>;
+describe('Settings', () => {
+  let component: Settings;
+  let fixture: ComponentFixture<Settings>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Ustawienia],
+      imports: [Settings],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(Ustawienia);
+    fixture = TestBed.createComponent(Settings);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
@@ -440,7 +440,7 @@ describe('Ustawienia', () => {
 });
 
 
-===== C:\Users\damian.malawko\Desktop\Projekt 1111\src\app\ustawienia\ustawienia.ts =====
+===== C:\Users\damian.malawko\Desktop\Projekt 1111\src\app\ustawienia\Settings.ts =====
 
 import { Component } from '@angular/core';
 
@@ -450,10 +450,10 @@ import { Component } from '@angular/core';
   styleUrl: './ustawienia.css',
   templateUrl: './ustawienia.html',
 })
-export class Ustawienia {}
+export class Settings {}
 
 
-===== C:\Users\damian.malawko\Desktop\Projekt 1111\src\app\zjezyki\zjezyki.spec.ts =====
+===== C:\Users\damian.malawko\Desktop\Projekt 1111\src\app\zjezyki\Ch1Language.spec.ts =====
 
 import { Component, Output, EventEmitter } from '@angular/core';
 
@@ -464,7 +464,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
   templateUrl: './zjezyki.html',
   styleUrl: './zjezyki.css',
 })
-export class Zjezyki {
+export class Ch1Language {
   @Output() zamknij = new EventEmitter<void>();
 
   WybierzJ() {
@@ -473,7 +473,7 @@ export class Zjezyki {
 }
 
 
-===== C:\Users\damian.malawko\Desktop\Projekt 1111\src\app\zjezyki\zjezyki.ts =====
+===== C:\Users\damian.malawko\Desktop\Projekt 1111\src\app\zjezyki\Ch1Language.ts =====
 
 import { Component, Output, EventEmitter } from '@angular/core';
 
@@ -483,7 +483,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
   styleUrl: './zjezyki.css',
   templateUrl: './zjezyki.html',
 })
-export class Zjezyki {
+export class Ch1Language {
   @Output() zmianaJezyka = new EventEmitter<string>();
 
   wybranyJezyk = 'Polski';

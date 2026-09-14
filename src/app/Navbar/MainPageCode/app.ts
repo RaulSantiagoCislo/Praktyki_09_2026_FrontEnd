@@ -1,12 +1,12 @@
 import { Component, signal } from '@angular/core';
-import { Login } from './login/login';
-import { Zjezyki } from './zjezyki/zjezyki';
-import { Ustawienia } from './ustawienia/ustawienia';
+import { Login } from '../login/login';
+import { Ch1Language } from '../Ch1Language/Ch1Language';
+import { Settings } from '../Settings/Settings';
 
 @Component({
-  imports: [Login, Zjezyki, Ustawienia],
+  imports: [Login, Ch1Language, Settings],
   selector: 'app-root',
-  styleUrls: ['./app.css', './Wygląd.css'],
+  styleUrls: ['../../app.css', '../../View.css'],
   templateUrl: './app.html',
 })
 export class App {

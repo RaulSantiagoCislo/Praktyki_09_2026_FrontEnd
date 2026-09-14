@@ -2,7 +2,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   imports: [],
-  selector: 'app-zjezyki',
+  selector: 'app-Ch1Language',
   styleUrl: './zjezyki.css',
   templateUrl: './zjezyki.html',
 })

@@ -7,7 +7,7 @@ import { StronaG2 } from './strona-g2/strona-g2';
 @Component({
   imports: [Login, Zjezyki, Ustawienia, StronaG2],
   selector: 'app-root',
-  styleUrls: ['./app.css', './Wyglad.css'],
+  styleUrls: ['./app.css', './View.css'],
   templateUrl: './app.html',
 })
 export class App {

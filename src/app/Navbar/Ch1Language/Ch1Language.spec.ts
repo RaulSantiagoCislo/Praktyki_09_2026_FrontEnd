@@ -1,11 +1,11 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-zjezyki',
+  selector: 'app-Ch1Language',
   standalone: true,
   imports: [],
-  templateUrl: './zjezyki.html',
-  styleUrl: './zjezyki.css',
+  templateUrl: './Ch1Language.html',
+  styleUrl: './Ch1Language.css',
 })
 export class Zjezyki {
   @Output() zamknij = new EventEmitter<void>();

@@ -4,15 +4,13 @@ import { Component } from '@angular/core';
   selector: 'app-login',
   standalone: true,
   imports: [],
-  templateUrl: './Wygląd.html',
-  styleUrl: './Wygląd.css',
+  templateUrl: './View.html',
+  styleUrl: './View.css',
 })
 export class Login {
   // UWAGA: Zmienna i funkcja muszą być DOKŁADNIE tutaj, między nawiasami { }
-
- // pokazFormularz = false;
-
+  // pokazFormularz = false;
   //kliknijPrzycisk() {
- //   this.pokazFormularz = !this.pokazFormularz;
- // }
+  //   this.pokazFormularz = !this.pokazFormularz;
+  // }
 }

@@ -2,11 +2,11 @@ import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   imports: [],
-  selector: 'app-zjezyki',
-  styleUrl: './zjezyki.css',
-  templateUrl: './zjezyki.html',
+  selector: 'app-Ch1Language',
+  styleUrl: './Ch1Language.css',
+  templateUrl: './Ch1Language.html',
 })
-export class Zjezyki {
+export class Ch1Language {
   @Output() ChangingLanguage = new EventEmitter<string>();
 
   ChosenLanguage = 'Polski';

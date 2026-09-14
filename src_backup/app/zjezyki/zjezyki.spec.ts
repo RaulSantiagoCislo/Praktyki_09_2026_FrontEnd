@@ -1,7 +1,7 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-zjezyki',
+  selector: 'app-Ch1Language',
   standalone: true,
   imports: [],
   templateUrl: './zjezyki.html',

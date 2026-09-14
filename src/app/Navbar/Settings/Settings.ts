@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   imports: [],
   selector: 'app-Settings',
-  styleUrl: './ustawienia.css',
-  templateUrl: './ustawienia.html',
+  styleUrl: './Settings.css',
+  templateUrl: './Settings.html',
 })
-export class Ustawienia {}
+export class Settings {}

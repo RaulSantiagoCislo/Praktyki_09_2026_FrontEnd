@@ -3,32 +3,32 @@
 <header>  </header>
 <nav>
   <section id="tło"> <!-- zbędne -->
-  <section id="główny">
+  <section id="Main">
 
     <section>
       <img src="https://images.seeklogo.com/logo-png/36/2/global-logic-logo-png_seeklogo-360371.png" width="100" height="100" >
     </section>
 
 
-    <section class="linia_pionowa"></section>
+    <section class="VerticalLine"></section>
 
-    <button class="przycisk_główny">Tryb jasny</button>
-    <section class="linia_pionowa"></section>
+    <button class="Main_Button">Tryb jasny</button>
+    <section class="VerticalLine"></section>
 
-    <button class="przycisk_główny" (click)="ShowSettings()">Pomoc</button>
-    <section class="linia_pionowa"></section>
+    <button class="Main_Button" (click)="ShowSettings()">Pomoc</button>
+    <section class="VerticalLine"></section>
     <!-- dodać click-->
-    <button class="przycisk_główny" (click)="ShowLanguage()">{{ ChosenLanguage }}</button><!--  (click)="Zmien_jezyk()"-->
+    <button class="Main_Button" (click)="ShowLanguage()">{{ ChosenLanguage }}</button><!--  (click)="Zmien_jezyk()"-->
 
 
 
-    <section id="linia_pozioma">
+    <section id="VerticalLine">
 
     </section>
 
 
     <app-login></app-login>
-    <section id="link_do_biletów" >
+    <section id="Link_To_Ticket" >
     <img src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Ikona_bilety.png?utm_source=pl.wikipedia.org&utm_campaign=index&utm_content=original" width="50px" height="50px">
     <a href="dalsze_menu">Przejdź do e-biletów</a>
   </section>
@@ -45,7 +45,7 @@
   <h1> Już dziś zorganizuj swój dzień z Global Logic e-bilet</h1>
 
   @if (ShowLanguage_Window && !ShowSettings_Window) {
-    <app-zjezyki (ChangingLanguage)="zmienJezyk($event)"></app-zjezyki>
+    <app-zjezyki (ChangingLanguage)="ChangeLanguage($event)"></app-zjezyki>
   }
 
 

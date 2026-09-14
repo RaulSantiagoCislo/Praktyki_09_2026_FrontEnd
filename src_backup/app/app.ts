@@ -55,7 +55,7 @@ export class App {
   // NiemieckiJe = '';
   // FrancuskiJe =
 
-  zmienJezyk(jezyk: string) {
+  ChangeLanguage(jezyk: string) {
     this.ChosenLanguage = jezyk;
 
     //   if (jezyk === 'Polski') {

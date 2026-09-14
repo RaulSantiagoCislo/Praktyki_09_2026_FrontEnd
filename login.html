@@ -1,0 +1,36 @@
+<button class="otworz-btn" id="lekko_w_prawo" (click)="przelaczRejestracje()">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwZRwSpYHN1ES36Aa8WoUvi14NFSFc6TZG633kVuS4Qg&s=10" width="30%" height="50%">
+  Zajerestruj się
+</button>
+
+<button class="otworz-btn" (click)="przelaczLogowanie()">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwZRwSpYHN1ES36Aa8WoUvi14NFSFc6TZG633kVuS4Qg&s=10" width="30%" height="50%">
+  Zaloguj się
+</button>
+
+@if (pokazLogowanie) {
+  <div class="modal-overlay">
+    <div class="modal-box">
+      <h2>Logowanie</h2>
+      <input type="email" placeholder="Adres e-mail" class="input-field">
+      <input type="password" placeholder="Hasło" class="input-field">
+      <button class="btn-primary">Zaloguj</button>
+      <button class="btn-secondary" (click)="przelaczLogowanie()">Anuluj</button>
+    </div>
+  </div>
+}
+
+@if (pokazRejestracja) {
+  <div class="modal-overlay">
+    <div class="modal-box">
+      <h2>Rejestracja</h2>
+      <input type="text" placeholder="Imię" class="input-field">
+      <input type="text" placeholder="Nazwisko" class="input-field">
+      <input type="email" placeholder="Adres e-mail" class="input-field">
+      <input type="tel" placeholder="Numer telefonu" class="input-field">
+      <input type="password" placeholder="Hasło" class="input-field">
+      <button class="btn-primary">Zarejestruj</button>
+      <button class="btn-secondary" (click)="przelaczRejestracje()">Anuluj</button>
+    </div>
+  </div>
+}

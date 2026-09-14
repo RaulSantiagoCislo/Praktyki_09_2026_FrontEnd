@@ -14,38 +14,38 @@ export class App {
   protected readonly title = signal('Demo');
 
   // tekst powitania na stronie
-  Pokaz_TekstStronyGlownej = true;
+  Show_TextMainSite = true;
   pokazG2() {
-    this.pokazStronaG2 = true;
-    this.Pokaz_TekstStronyGlownej = false;
+    this.ShowSiteG2 = true;
+    this.Show_TextMainSite = false;
   }
 
   // Strona G2
-  pokazStronaG2 = false;
+  ShowSiteG2 = false;
 
   // pokazG2() {
   //   this.pokazStronaG2 = true;
   // }
 
   // tutaj mi zamienia okna ustawień i jezyka by sie zamieniały
-  pokazJezykiOkno = false;
+  ShowLanguage_Window = false;
 
-  pokazJezyki() {
-    if (this.pokazUstawieniaOkno) {
-      this.pokazUstawieniaOkno = false;
+  ShowLanguage() {
+    if (this.ShowSettings_Window) {
+      this.ShowSettings_Window = false;
     }
 
-    this.pokazJezykiOkno = !this.pokazJezykiOkno;
+    this.ShowLanguage_Window = !this.ShowLanguage_Window;
   }
 
-  pokazUstawieniaOkno = false;
+  ShowSettings_Window = false;
 
-  pokazUstawienia() {
-    if (this.pokazJezykiOkno) {
-      this.pokazJezykiOkno = false;
+  ShowSettings() {
+    if (this.ShowLanguage_Window) {
+      this.ShowLanguage_Window = false;
     }
 
-    this.pokazUstawieniaOkno = !this.pokazUstawieniaOkno;
+    this.ShowSettings_Window = !this.ShowSettings_Window;
   }
 
   wybranyJezyk = 'Polski';

@@ -15,10 +15,10 @@
     <button class="przycisk_główny">Tryb jasny</button>
     <section class="linia_pionowa"></section>
 
-    <button class="przycisk_główny" (click)="pokazUstawienia()">Pomoc</button>
+    <button class="przycisk_główny" (click)="ShowSettings()">Pomoc</button>
     <section class="linia_pionowa"></section>
     <!-- dodać click-->
-    <button class="przycisk_główny" (click)="pokazJezyki()">{{ wybranyJezyk }}</button><!--  (click)="Zmien_jezyk()"-->
+    <button class="przycisk_główny" (click)="ShowLanguage()">{{ wybranyJezyk }}</button><!--  (click)="Zmien_jezyk()"-->
 
 
 
@@ -44,13 +44,13 @@
 <main>
   <h1> Już dziś zorganizuj swój dzień z Global Logic e-bilet</h1>
 
-  @if (pokazJezykiOkno && !pokazUstawieniaOkno) {
+  @if (ShowLanguage_Window && !ShowSettings_Window) {
     <app-zjezyki (zmianaJezyka)="zmienJezyk($event)"></app-zjezyki>
   }
 
 
 
-  @if (pokazUstawieniaOkno && !pokazJezykiOkno) {
+  @if (ShowSettings_Window && !ShowLanguage_Window) {
     <app-ustawienia></app-ustawienia>
   }
 

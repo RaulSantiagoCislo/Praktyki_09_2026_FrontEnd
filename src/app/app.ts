@@ -12,27 +12,25 @@ import { Ustawienia } from './ustawienia/ustawienia';
 export class App {
   protected readonly title = signal('Demo');
 
-
-
   // tutaj mi zamienia okna ustawień i jezyka by sie zamieniały
-  pokazJezykiOkno = false;
+  ShowLanguage_Window = false;
 
-  pokazJezyki() {
-    if (this.pokazUstawieniaOkno) {
-      this.pokazUstawieniaOkno = false;
+  ShowLanguage() {
+    if (this.ShowSettings_Window) {
+      this.ShowSettings_Window = false;
     }
 
-    this.pokazJezykiOkno = !this.pokazJezykiOkno;
+    this.ShowLanguage_Window = !this.ShowLanguage_Window;
   }
 
-  pokazUstawieniaOkno = false;
+  ShowSettings_Window = false;
 
-  pokazUstawienia() {
-    if (this.pokazJezykiOkno) {
-      this.pokazJezykiOkno = false;
+  ShowSettings() {
+    if (this.ShowLanguage_Window) {
+      this.ShowLanguage_Window = false;
     }
 
-    this.pokazUstawieniaOkno = !this.pokazUstawieniaOkno;
+    this.ShowSettings_Window = !this.ShowSettings_Window;
   }
 
   wybranyJezyk = 'Polski';

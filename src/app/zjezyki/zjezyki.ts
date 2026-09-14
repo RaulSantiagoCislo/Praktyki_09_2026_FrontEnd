@@ -16,7 +16,7 @@ export class Zjezyki {
   NiemieckiJe = 'Niemiecki';
   FrancuskiJe = 'Francuski';
 
-  wybierzJezyk(jezyk: string) {
+  SelectLanguage(jezyk: string) {
     this.wybranyJezyk = jezyk;
     this.zmianaJezyka.emit(jezyk);
 

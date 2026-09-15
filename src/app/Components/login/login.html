@@ -1,0 +1,79 @@
+<!-- Główny przycisk na stronie -->
+<!-- Przycisk rejestracji -->
+<style>
+  #Little_in_Right {
+    right: 155px;
+  }
+</style>
+
+<button
+  class="otworz-btn"
+  id="Little_in_Right"
+  (click)="PokazRejestracje()">
+
+  <img
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwZRwSpYHN1ES36Aa8WoUvi14NFSFc6TZG633kVuS4Qg&s=10"
+    width="30%"
+    height="50%">
+
+  Zarejestruj się
+</button>
+
+
+<button
+  class="otworz-btn"
+  (click)="UseButton()">
+
+  <img
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwZRwSpYHN1ES36Aa8WoUvi14NFSFc6TZG633kVuS4Qg&s=10"
+    width="30%"
+    height="50%">
+
+  Zaloguj się
+</button>
+
+
+@if (ShowForm1) {
+
+  <div class="tlo-modala">
+
+    <div class="karta-modala">
+
+      <h2>Logowanie</h2>
+
+      <!-- Email -->
+      <div class="pole">
+        <input
+          type="email"
+          placeholder="Adres e-mail"
+          [(ngModel)]="email">
+      </div>
+
+
+      <div class="pole">
+        <input
+          type="password"
+          placeholder="Hasło"
+          [(ngModel)]="password">
+      </div>
+
+      <!-- Zaloguj -->
+      <button
+        class="zaloguj-btn"
+        (click)="LoginUser()">
+
+        Zaloguj
+      </button>
+
+      <!-- Anuluj -->
+      <button
+        class="zamknij-btn"
+        (click)="UseButton()">
+
+        Anuluj
+      </button>
+
+    </div>
+
+  </div>
+}

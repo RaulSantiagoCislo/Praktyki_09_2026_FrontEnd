@@ -1,0 +1,30 @@
+<div class="tlo-modala">
+  <div class="karta-modala">
+    <h2>Rejestracja</h2>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="pole">
+        <input type="text" placeholder="Imię" formControlName="firstName">
+      </div>
+
+      <div class="pole">
+        <input type="text" placeholder="Nazwisko" formControlName="lastName">
+      </div>
+
+      <div class="pole">
+        <input type="email" placeholder="Adres e-mail" formControlName="email">
+      </div>
+
+      <div class="pole">
+        <input type="tel" placeholder="Numer telefonu" formControlName="phone">
+      </div>
+
+      <div class="pole">
+        <input type="password" placeholder="Hasło" formControlName="password">
+      </div>
+
+      <button type="submit" class="zaloguj-btn">Rejestruj się</button>
+      <button type="button" class="zamknij-btn" (click)="onCancel()">Anuluj</button>
+    </form>
+  </div>
+</div>

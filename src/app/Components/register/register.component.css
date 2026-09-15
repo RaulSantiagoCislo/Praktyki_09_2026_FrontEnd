@@ -1,0 +1,61 @@
+.tlo-modala {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.karta-modala {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  width: 350px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.karta-modala h2 {
+  margin-bottom: 20px;
+  font-family: sans-serif;
+}
+
+.pole {
+  margin-bottom: 12px;
+}
+
+.pole input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.zaloguj-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #8bbefa;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.zamknij-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: transparent;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 8px;
+}

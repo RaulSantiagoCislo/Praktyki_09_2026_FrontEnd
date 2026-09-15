@@ -1,26 +1,27 @@
 import { Component } from '@angular/core';
-import { Podroz } from '../podroz/podroz';
-import { Rozrywka } from '../rozrywka/rozrywka';
-import { Kultura } from '../kultura/kultura';
+import { Travel } from '../Travel/Travel';
+// import { Enterteinment } from '../Enterteinment/Enterteinment';
+import { Culture } from '../Culture/Culture';
+import { Enterteinment } from '../../../src/app/Rest_of_Website/Enterteinment/Enterteinment';
 
 @Component({
-  imports: [Podroz, Rozrywka, Kultura],
+  imports: [Travel, Enterteinment, Culture],
   selector: 'app-strona-g2',
   styleUrl: './strona-g2.css',
   templateUrl: './strona-g2.html',
 })
 export class StronaG2 {
-  pokazany = 'podroz';
+  pokazany = 'Travel';
 
   pokazPodroz() {
-    this.pokazany = 'podroz';
+    this.pokazany = 'Travel';
   }
 
   pokazRozrywke() {
-    this.pokazany = 'rozrywka';
+    this.pokazany = 'Enterteinment';
   }
 
   pokazKulture() {
-    this.pokazany = 'kultura';
+    this.pokazany = 'Culture';
   }
 }

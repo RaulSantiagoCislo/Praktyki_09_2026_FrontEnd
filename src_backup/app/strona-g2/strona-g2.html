@@ -4,22 +4,22 @@
 
 
 <br>
-<button class="dalsze" id="dalsz2" (click)="pokazRozrywke()">Rozrywka</button>
+<button class="dalsze" id="dalsz2" (click)="pokazRozrywke()">Enterteinment</button>
 
 
 <br>
-<button class="dalsze" id="dalsze3" (click)="pokazKulture()">Kultura</button>
+<button class="dalsze" id="dalsze3" (click)="pokazKulture()">Culture</button>
 
 
-@if (pokazany === 'podroz') {
+@if (pokazany === 'Travel') {
   <app-podroz></app-podroz>
 }
 
-@if (pokazany === 'rozrywka') {
+@if (pokazany === 'Enterteinment') {
   <app-rozrywka></app-rozrywka>
 }
 
-@if (pokazany === 'kultura') {
+@if (pokazany === 'Culture') {
   <app-kultura></app-kultura>
 }
 

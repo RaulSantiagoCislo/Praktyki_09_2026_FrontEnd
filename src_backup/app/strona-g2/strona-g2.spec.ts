@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { StronaG2 } from './strona-g2';
+import { SiteG2 } from './Site_G2';
 
-describe('StronaG2', () => {
-  let component: StronaG2;
-  let fixture: ComponentFixture<StronaG2>;
+describe('SiteG2', () => {
+  let component: SiteG2;
+  let fixture: ComponentFixture<SiteG2>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [StronaG2],
+      imports: [SiteG2],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(StronaG2);
+    fixture = TestBed.createComponent(SiteG2);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

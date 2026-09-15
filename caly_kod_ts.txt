@@ -200,21 +200,21 @@ export class Login {
 }
 
 
-===== C:\Users\damian.malawko\Desktop\Projekt 1111\src\app\kultura\kultura.spec.ts =====
+===== C:\Users\damian.malawko\Desktop\Projekt 1111\src\app\kultura\Culture.spec.ts =====
 
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { Kultura } from './kultura';
+import { Culture } from './kultura';
 
-describe('Kultura', () => {
-  let component: Kultura;
-  let fixture: ComponentFixture<Kultura>;
+describe('Culture', () => {
+  let component: Culture;
+  let fixture: ComponentFixture<Culture>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Kultura],
+      imports: [Culture],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(Kultura);
+    fixture = TestBed.createComponent(Culture);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
@@ -225,7 +225,7 @@ describe('Kultura', () => {
 });
 
 
-===== C:\Users\damian.malawko\Desktop\Projekt 1111\src\app\kultura\kultura.ts =====
+===== C:\Users\damian.malawko\Desktop\Projekt 1111\src\app\kultura\Culture.ts =====
 
 import { Component } from '@angular/core';
 
@@ -235,7 +235,7 @@ import { Component } from '@angular/core';
   styleUrl: './kultura.css',
   templateUrl: './kultura.html',
 })
-export class Kultura {}
+export class Culture {}
 
 
 ===== C:\Users\damian.malawko\Desktop\Projekt 1111\src\app\login\login.spec.ts =====
@@ -284,21 +284,21 @@ export class Login {
   }
 }
 
-===== C:\Users\damian.malawko\Desktop\Projekt 1111\src\app\podroz\podroz.spec.ts =====
+===== C:\Users\damian.malawko\Desktop\Projekt 1111\src\app\podroz\Travel.spec.ts =====
 
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { Podroz } from './podroz';
+import { Travel } from './podroz';
 
-describe('Podroz', () => {
-  let component: Podroz;
-  let fixture: ComponentFixture<Podroz>;
+describe('Travel', () => {
+  let component: Travel;
+  let fixture: ComponentFixture<Travel>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Podroz],
+      imports: [Travel],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(Podroz);
+    fixture = TestBed.createComponent(Travel);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
@@ -309,7 +309,7 @@ describe('Podroz', () => {
 });
 
 
-===== C:\Users\damian.malawko\Desktop\Projekt 1111\src\app\podroz\podroz.ts =====
+===== C:\Users\damian.malawko\Desktop\Projekt 1111\src\app\podroz\Travel.ts =====
 
 import { Component } from '@angular/core';
 
@@ -317,26 +317,26 @@ import { Component } from '@angular/core';
   imports: [],
   selector: 'app-podroz',
   styleUrl: './podroz.css',
-  templateUrl: './podroz.html',
+  templateUrl: './Travel.html',
 })
-export class Podroz {}
+export class Travel {}
 
 
-===== C:\Users\damian.malawko\Desktop\Projekt 1111\src\app\rozrywka\rozrywka.spec.ts =====
+===== C:\Users\damian.malawko\Desktop\Projekt 1111\src\app\rozrywka\Enterteinment.spec.ts =====
 
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { Rozrywka } from './rozrywka';
+import { Enterteinment } from './rozrywka';
 
-describe('Rozrywka', () => {
-  let component: Rozrywka;
-  let fixture: ComponentFixture<Rozrywka>;
+describe('Enterteinment', () => {
+  let component: Enterteinment;
+  let fixture: ComponentFixture<Enterteinment>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Rozrywka],
+      imports: [Enterteinment],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(Rozrywka);
+    fixture = TestBed.createComponent(Enterteinment);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
@@ -347,7 +347,7 @@ describe('Rozrywka', () => {
 });
 
 
-===== C:\Users\damian.malawko\Desktop\Projekt 1111\src\app\rozrywka\rozrywka.ts =====
+===== C:\Users\damian.malawko\Desktop\Projekt 1111\src\app\rozrywka\Enterteinment.ts =====
 
 import { Component } from '@angular/core';
 
@@ -357,7 +357,7 @@ import { Component } from '@angular/core';
   styleUrl: './rozrywka.css',
   templateUrl: './rozrywka.html',
 })
-export class Rozrywka {}
+export class Enterteinment {}
 
 
 ===== C:\Users\damian.malawko\Desktop\Projekt 1111\src\app\strona-g2\strona-g2.spec.ts =====
@@ -388,12 +388,12 @@ describe('StronaG2', () => {
 ===== C:\Users\damian.malawko\Desktop\Projekt 1111\src\app\strona-g2\strona-g2.ts =====
 
 import { Component } from '@angular/core';
-import { Podroz } from '../podroz/podroz';
-import { Rozrywka } from '../rozrywka/rozrywka';
-import { Kultura } from '../kultura/kultura';
+import { Travel } from '../podroz/podroz';
+import { Enterteinment } from '../rozrywka/rozrywka';
+import { Culture } from '../kultura/kultura';
 
 @Component({
-  imports: [Podroz, Rozrywka, Kultura],
+  imports: [Travel, Enterteinment, Culture],
   selector: 'app-strona-g2',
   styleUrl: './strona-g2.css',
   templateUrl: './strona-g2.html',

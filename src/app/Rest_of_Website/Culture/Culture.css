@@ -1,14 +1,18 @@
+.LesserNavigationBar1{
+
+  width: 90%;
+  height: 200px;
+  border:2px solid black;
+  background-color: whitesmoke;
+  border-radius: 10px
+}
+
+
 .Search_Button{
   border:2px solid darkorange;
   background-color: orange;
   border-radius: 10px
-
-
-
-
 }
-
-
 
 .GreyButton{
   border:2px solid dimgrey;
@@ -17,6 +21,9 @@
   color:dimgrey;
 
 
+}
+
+.Hold_Info{
 
 
 }

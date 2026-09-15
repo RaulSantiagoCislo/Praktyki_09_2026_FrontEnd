@@ -28,7 +28,7 @@
 
 
     <app-login></app-login>
-    <button id="Link_To_Ticket" (click)="pokazG2()">
+    <button id="Link_To_Ticket" (click)="ShowG2()">
     <img src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Ikona_bilety.png?utm_source=pl.wikipedia.org&utm_campaign=index&utm_content=original" width="50px" height="50px">
 <!--<a href="dalsze_menu">Przejdź do e-biletów</a>-->
       Przejdź do e-biletów
@@ -54,17 +54,17 @@
 
 
   @if (ShowLanguage_Window && !ShowSettings_Window) {
-    <app-zjezyki (ChangingLanguage)="ChangeLanguage($event)"></app-zjezyki>
+    <app-Ch1Language (ChangingLanguage)="ChangeLanguage($event)"></app-Ch1Language>
   }
 
 
 
   @if (ShowSettings_Window && !ShowLanguage_Window) {
-    <app-ustawienia></app-ustawienia>
+    <app-Settings></app-Settings>
   }
 
   @if (ShowSiteG2) {
-    <app-strona-g2></app-strona-g2>
+    <app-Site-G2></app-Site-G2>
   }
 
 

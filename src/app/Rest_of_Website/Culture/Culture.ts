@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   imports: [],
   selector: 'app-Culture',
-  styleUrl: './kultura.css',
-  templateUrl: './kultura.html',
+  styleUrl: './Culture.css',
+  templateUrl: './Culture.html',
 })
-export class Kultura {}
+export class Culture {}

@@ -15,7 +15,7 @@ export class App {
 
   // tekst powitania na stronie
   Show_TextMainSite = true;
-  pokazG2() {
+  ShowG2() {
     this.ShowSiteG2 = true;
     this.Show_TextMainSite = false;
   }

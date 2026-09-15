@@ -1,0 +1,22 @@
+.Search_Button{
+  border:2px solid darkorange;
+  background-color: orange;
+  border-radius: 10px
+
+
+
+
+}
+
+
+
+.GreyButton{
+  border:2px solid dimgrey;
+  background-color: white;
+  border-radius: 10px;
+  color:dimgrey;
+
+
+
+
+}

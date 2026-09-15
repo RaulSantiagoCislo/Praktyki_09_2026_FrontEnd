@@ -1,0 +1,10 @@
+<div>
+  <h2>Zaloguj się</h2>
+  
+  <input #poleEmail type="text" placeholder="Twój e-mail" />
+  <input #poleHaslo type="password" placeholder="Twoje hasło" />
+
+  <button (click)="zaloguj(poleEmail.value, poleHaslo.value)">
+    Zaloguj
+  </button>
+</div>  

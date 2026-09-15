@@ -1,85 +1,94 @@
-/* Przycisk startowy */
-.otworz-btn {
-  /*padding: 12px 24px;*/
-  font-size: 16px;
-  cursor: pointer;
+#Main{
+  background-color: darkorange;
+  border: 2px solid orange;
+  width: 800px;
+  height: 120px;
+  border-radius: 30px;
+margin: 0 auto;
 
-  /*dopiski od DM*/
-  border: 1px solid orange;
-  color: orange;
-  border-radius: 10px;
-  height: 50px;
-  width: 140px;
- /*float:right;*/
-
-  right: 10px;
-  position: absolute;
-  /*position: relative;*/
-  /*position: static;*/
-  top: 70px;
-}
-
-/* Ciemne tło na cały ekran (zamiast fioletowego) */
-.tlo-modala {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
   display: flex;
-  justify-content: center;
+  position: relative;
+
+
+  gap: 30px;
+}
+
+#Link_To_Ticket
+{
+background-color: white;
+  border: 2px solid orange;
+color: orange !important;
+  text-decoration: none !important;
+  width: 140px;
+  height: 40px;
+  border-radius: 10px;
+
+  display: flex;
   align-items: center;
-  font-family: sans-serif;
+  /*position: relative;*/
+top: 70px;
+position: absolute;
+  right: 300px;
+
+
+/*  width: 100%;*/
+/*padding: 12px;*/
+/*background: #007bff;*/
+/*color: white;*/
+/*border: none;*/
+/*border-radius: 8px;*/
+/*cursor: pointer;*/
+/*font-weight: bold;*/
+/*margin-bottom: 10px;*/
+
 }
 
-/* Biała karta z zaokrągleniami jak na projekcie */
-.karta-modala {
-  background: white;
-  padding: 30px;
-  border-radius: 16px;
-  width: 320px;
-  text-align: center;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-}
+/*#logo{*/
+/*nic*/
 
-.karta-modala h2 {
-  margin-top: 0;
-  margin-bottom: 25px;
-  font-size: 22px;
-}
+/*}*/
 
-/* Pola formularza */
-.pole input {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
-  box-sizing: border-box;
-  font-size: 14px;
-}
-
-/* Niebieski przycisk logowania */
-.zaloguj-btn {
-  width: 100%;
-  padding: 12px;
-  background: #007bff;
+.Main_Button
+{
+  height: 50px;
+  background-color:darkorange;
   color: white;
   border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-  margin-bottom: 10px;
+float: right;
+  right: 0px;
+  /*position: absolute;*/
+
+}
+.VerticalLine
+{
+  /*float: right;*/
+  margin: 20px;
+  height: 30px;
+  width: 4px;
+  background-color: orange;
+
+  right: 0px;
+position: relative;
+
 }
 
-/* Szary przycisk powrotu */
-.zamknij-btn {
-  width: 100%;
-  padding: 12px;
-  background: transparent;
-  color: #6b7280;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
-  cursor: pointer;
+#VerticalLine
+{
+  position: absolute;
+  margin-top: 50px;
+  right: 0px;
+  /*margin: 20px;*/
+  margin-right: 40px;
+  height: 4px;
+  /*width było 500 wcześneij*/
+  width: 620px;
+  background-color: orange;
+
+}
+/*do tekstu na głównej stornie*/
+h1{
+  color: white;
+  font-weight: bold;
+
 }

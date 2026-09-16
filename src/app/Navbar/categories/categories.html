@@ -13,8 +13,16 @@
 @if (Shown) {
 <!--  powstawiać do buttonów-->
 <!--  (mouseenter)="ShowPage()"-->
-  <button   class="ButtonsCategories" id="">Rozrywka</button>
-  <button  class="ButtonsCategories" id="">Podróż</button>
+  <button   (mouseenter)="ShowPage1()"   (mouseleave)="HidePage1()" class="ButtonsCategories" id="">Rozrywka</button>
+  @if (HoverPage1) {
+    <app-Enterteinment></app-Enterteinment>
+  }
+
+  <button  (mouseenter)="ShowPage2()"   (mouseleave)="HidePage2()" class="ButtonsCategories" id="">Podróż</button>
+  @if (HoverPage2) {
+    <app-Travel></app-Travel>
+  }
+
  <button  (mouseenter)="ShowPage3()"   (mouseleave)="HidePage3()" class="ButtonsCategories" id="">Kultura
    @if (HoverPage3) {
      <app-Culture></app-Culture>

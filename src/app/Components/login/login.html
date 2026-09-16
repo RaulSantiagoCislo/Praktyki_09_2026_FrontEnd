@@ -1,77 +1,60 @@
-<!-- Główny przycisk na stronie -->
-<!-- Przycisk rejestracji -->
-<style>
-  #Little_in_Right {
-    right: 155px;
-  }
-</style>
+<div class="auth-actions">
+  <button
+    class="btn btn-warning text-white !border-2 !border-white btn-sm sm:btn-md shadow-md"
+    type="button"
+    (click)="PokazRejestracje()">
+    Zarejestruj się
+  </button>
 
-<button
-  class="otworz-btn"
-  id="Little_in_Right"
-  (click)="PokazRejestracje()">
-
-  <img
-    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwZRwSpYHN1ES36Aa8WoUvi14NFSFc6TZG633kVuS4Qg&s=10"
-    width="30%"
-    height="50%">
-
-  Zarejestruj się
-</button>
-
-
-<button
-  class="otworz-btn"
-  (click)="UseButton()">
-
-  <img
-    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwZRwSpYHN1ES36Aa8WoUvi14NFSFc6TZG633kVuS4Qg&s=10"
-    width="30%"
-    height="50%">
-
-  Zaloguj się
-</button>
+  <button
+    class="btn btn-warning text-white !border-2 !border-white btn-sm sm:btn-md shadow-lg"
+    type="button"
+    (click)="UseButton()">
+    Zaloguj się
+  </button>
+</div>
 
 
 @if (ShowForm1) {
 
   <div class="tlo-modala">
-
-    <div class="karta-modala">
-
+    <div class="karta-modala card border-2 border-orange-400">
       <h2>Logowanie</h2>
 
-      <!-- Email -->
-      <div class="pole">
-        <input
-          type="email"
-          placeholder="Adres e-mail"
-          [(ngModel)]="email">
-      </div>
+      <form (ngSubmit)="LoginUser()">
+        <div class="pole">
+          <input
+            class="input input-bordered w-full bg-white text-black"
+            type="email"
+            placeholder="Adres e-mail"
+            [(ngModel)]="email"
+            name="email"
+            required>
+        </div>
 
+        <div class="pole">
+          <input
+            class="input input-bordered w-full bg-white text-black"
+            type="password"
+            placeholder="Hasło"
+            [(ngModel)]="password"
+            name="password"
+            required>
+        </div>
 
-      <div class="pole">
-        <input
-          type="password"
-          placeholder="Hasło"
-          [(ngModel)]="password">
-      </div>
+        <button
+          class="btn btn-warning text-black border-2 border-white !bg-orange-500 w-full"
+          type="submit">
+          Zaloguj
+        </button>
 
-      <!-- Zaloguj -->
-      <button
-        class="zaloguj-btn"
-        (click)="LoginUser()">
-
-        Zaloguj
-      </button>
-
-      <!-- Anuluj -->
-      <button
-        class="zamknij-btn"
-        (click)="UseButton()">
-
-        Anuluj
-      </button>
+        <button
+          class="btn btn-outline border-black text-black w-full"
+          type="button"
+          (click)="UseButton()">
+          Anuluj
+        </button>
+      </form>
 
     </div>
 

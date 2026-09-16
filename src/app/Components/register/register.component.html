@@ -23,8 +23,18 @@
         <input type="password" placeholder="Hasło" formControlName="password">
       </div>
 
-      <button type="submit" class="zaloguj-btn">Rejestruj się</button>
-      <button type="button" class="zamknij-btn" (click)="onCancel()">Anuluj</button>
+      <button
+        type="submit"
+        class="btn btn-warning text-black border-2 border-white w-full">
+        Rejestruj się
+      </button>
+
+      <button
+        type="button"
+        class="btn btn-outline border-black text-black w-full"
+        (click)="onCancel()">
+        Anuluj
+      </button>
     </form>
   </div>
 </div>

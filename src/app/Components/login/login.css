@@ -1,22 +1,18 @@
-/* Przycisk startowy */
-.otworz-btn {
-  /*padding: 12px 24px;*/
-  font-size: 16px;
-  cursor: pointer;
-
-  /*dopiski od DM*/
-  border: 1px solid orange;
-  color: orange;
-  border-radius: 10px;
-  height: 50px;
-  width: 140px;
- /*float:right;*/
-
-  right: 10px;
+.auth-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
   position: absolute;
-  /*position: relative;*/
-  /*position: static;*/
-  top: 70px;
+  right: 1rem;
+  bottom: 0.35rem;
+}
+
+.auth-actions .btn {
+  border: 2px solid #ffffff !important;
+  color: #ffffff !important;
+  border-radius: 0.5rem;
+  min-width: 120px;
+  padding: 0.5rem 0.8rem;
 }
 
 /* Ciemne tło na cały ekran (zamiast fioletowego) */
@@ -31,6 +27,7 @@
   justify-content: center;
   align-items: center;
   font-family: sans-serif;
+  z-index: 1000;
 }
 
 /* Biała karta z zaokrągleniami jak na projekcie */
@@ -38,7 +35,8 @@
   background: white;
   padding: 30px;
   border-radius: 16px;
-  width: 320px;
+  width: 350px;
+  max-width: calc(100vw - 2rem);
   text-align: center;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
@@ -49,15 +47,40 @@
   font-size: 22px;
 }
 
+.karta-modala form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 /* Pola formularza */
 .pole input {
   width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
+  margin-bottom: 0;
   border: 1px solid #d1d5db;
   border-radius: 8px;
   box-sizing: border-box;
   font-size: 14px;
+}
+
+.pole {
+  width: 100%;
+}
+
+.karta-modala .btn + .btn {
+  margin-top: 0;
+}
+
+.karta-modala form .btn {
+  width: 100%;
+}
+
+.karta-modala form button[type='submit'] {
+  width: 100%;
+  background-color: darkorange !important;
+  color: #000000 !important;
+  border: 2px solid #ffffff !important;
+  border-radius: 0.5rem;
 }
 
 /* Niebieski przycisk logowania */

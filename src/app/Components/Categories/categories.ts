@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Culture } from './ShowCategories/culture/culture';
 import { Enterteinment } from './ShowCategories/enterteinment/enterteinment';
-
+// fixed finally
 
 @Component({
   imports: [Culture, Enterteinment],
@@ -21,3 +21,4 @@ export class Categories {
     this.hoveredPage = pageName;
   }
 }
+// a

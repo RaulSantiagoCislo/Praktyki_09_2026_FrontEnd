@@ -8,7 +8,7 @@ import { Categories } from './Components/Categories/categories';
 @Component({
   imports: [LoginComponent, Ch1Language, Settings, RegisterComponent, Categories],
   selector: 'app-root',
-  styleUrls: ['./app.css', './View.css'],
+  styleUrls: ['./app.css'],
   templateUrl: './app.html',
 })
 export class App {

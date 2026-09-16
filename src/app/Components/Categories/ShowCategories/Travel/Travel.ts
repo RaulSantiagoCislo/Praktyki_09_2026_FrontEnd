@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
+  selector: 'app-travel',
   imports: [],
-  selector: 'app-Travel',
-  styleUrl: './Travel.css',
   templateUrl: './Travel.html',
+  styleUrl: './Travel.css',
 })
 export class Travel {}

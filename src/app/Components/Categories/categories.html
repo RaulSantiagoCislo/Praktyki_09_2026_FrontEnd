@@ -1,0 +1,41 @@
+<section id="SectionForCategories">
+  <button (click)="CategoriesOption()" id="Categories1">Kategorie
+    @if (Shown) {
+      <img src="https://www.pngmart.com/files/23/Black-X-PNG-Pic.png" width="50px" height="50px">
+    }
+    @if (!Shown) {
+      <img src="https://www.svgrepo.com/show/533653/chevron-down.svg" width="50px" height="50px">
+    }
+  </button>
+
+  <section id="SectionForCategories2">
+    @if (Shown) {
+
+      <button (mouseenter)="ShowPage1()" (mouseleave)="HidePage1()" class="ButtonsCategories">
+        Rozrywka
+      </button>
+
+      @if (HoverPage1) {
+        <app-Enterteinment></app-Enterteinment>
+      }
+
+
+      <button (mouseenter)="ShowPage2()" (mouseleave)="HidePage2()" class="ButtonsCategories">
+        Podróż
+      </button>
+
+      @if (HoverPage2) {
+        <app-travel></app-travel>
+      }
+
+      <button (mouseenter)="ShowPage3()" (mouseleave)="HidePage3()" class="ButtonsCategories">
+        Kultura
+      </button>
+
+      @if (HoverPage3) {
+        <app-culture></app-culture>
+      }
+
+    }
+  </section>
+</section>

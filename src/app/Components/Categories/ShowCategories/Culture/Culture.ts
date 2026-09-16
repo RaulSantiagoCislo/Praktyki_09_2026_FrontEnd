@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  imports: [],
   selector: 'app-culture',
-  styleUrl: './Culture.css',
+  imports: [],
   templateUrl: './Culture.html',
+  styleUrl: './Culture.css',
 })
 export class Culture {}

@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { Culture } from './culture';
+import { Culture } from './Culture';
 
 describe('Culture', () => {
   let component: Culture;

@@ -7,7 +7,7 @@ import { RegisterComponent } from './Components/register/register.component';
 @Component({
   imports: [LoginComponent, Ch1Language, Settings, RegisterComponent],
   selector: 'app-root',
-  styleUrls: ['./app.css', './View.css'],
+  styleUrls: ['./app.css'],
   templateUrl: './app.html',
 })
 export class App {

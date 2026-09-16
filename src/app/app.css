@@ -1,43 +1,64 @@
-import { Component, signal } from '@angular/core';
-import { LoginComponent } from './Components/login/login.component';
-import { Ch1Language } from './Components/Ch1Language/Ch1Language';
-import { Settings } from './Components/Settings/Settings';
-import { RegisterComponent } from './Components/register/register.component';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@Component({
-  imports: [LoginComponent, Ch1Language, Settings, RegisterComponent],
-  selector: 'app-root',
-  styleUrls: ['./app.css', './View.css'],
-  templateUrl: './app.html',
-})
-export class App {
-  protected readonly title = signal('Demo');
+#Main {
+  background-color: darkorange;
+  border: 2px solid orange;
+  width: 800px;
+  height: 120px;
+  border-radius: 30px;
+  margin: 0 auto;
+  padding: 10px;
+  display: flex;
+  position: relative;
+  gap: 30px;
+}
 
-  ShowLanguage_Window = false;
-  ShowSettings_Window = false;
-  ShowRegister_Window = false;
+#Link_To_Ticket {
+  background-color: white;
+  border: 2px solid orange;
+  color: orange !important;
+  text-decoration: none !important;
+  width: 140px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  top: 70px;
+  position: absolute;
+  right: 300px;
+}
 
-  ShowLanguage() {
-    this.ShowSettings_Window = false;
-    this.ShowRegister_Window = false;
-    this.ShowLanguage_Window = !this.ShowLanguage_Window;
-  }
+.Main_Button {
+  height: 50px;
+  background-color: darkorange;
+  color: white;
+  border: none;
+  float: right;
+  right: 0px;
+}
 
-  ShowSettings() {
-    this.ShowLanguage_Window = false;
-    this.ShowRegister_Window = false;
-    this.ShowSettings_Window = !this.ShowSettings_Window;
-  }
+.VerticalLine {
+  margin: 20px;
+  height: 30px;
+  width: 4px;
+  background-color: orange;
+  right: 0px;
+  position: relative;
+}
 
-  ShowRegister() {
-    this.ShowLanguage_Window = false;
-    this.ShowSettings_Window = false;
-    this.ShowRegister_Window = !this.ShowRegister_Window;
-  }
+#VerticalLine {
+  position: absolute;
+  margin-top: 50px;
+  right: 0px;
+  margin-right: 40px;
+  height: 4px;
+  width: 620px;
+  background-color: orange;
+}
 
-  ChosenLanguage = 'Polish';
-
-  ChangeLanguage(language: string) {
-    this.ChosenLanguage = language;
-  }
+h1 {
+  color: white;
+  font-weight: bold;
 }

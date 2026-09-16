@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Travel } from '../Travel/Travel';
 // import { Enterteinment } from '../Enterteinment/Enterteinment';
 import { Culture } from '../Culture/Culture';
-import { Enterteinment } from '../../../src/app/Rest_of_Website/Enterteinment/Enterteinment';
+import { Enterteinment } from '../../../src/app/Rest_of_Website USELESS/Enterteinment/Enterteinment';
 
 @Component({
   imports: [Travel, Enterteinment, Culture],

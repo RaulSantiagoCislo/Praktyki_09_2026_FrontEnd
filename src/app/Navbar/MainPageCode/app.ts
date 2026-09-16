@@ -2,9 +2,10 @@ import { Component, signal } from '@angular/core';
 import { Login } from '../login/login';
 import { Ch1Language } from '../Ch1Language/Ch1Language';
 import { Settings } from '../Settings/Settings';
+import { Categories } from '../categories/categories';
 
 @Component({
-  imports: [Login, Ch1Language, Settings],
+  imports: [Login, Ch1Language, Settings, Categories],
   selector: 'app-root',
   styleUrls: ['../../app.css', '../../View.css'],
   templateUrl: './app.html',

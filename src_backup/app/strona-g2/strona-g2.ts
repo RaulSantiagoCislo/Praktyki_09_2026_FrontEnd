@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Travel } from '../Travel/Travel';
-import { Enterteinment } from '../Enterteinment/Enterteinment';
-import { Culture } from '../Culture/Culture';
+import { Enterteinment } from '../enterteinment/enterteinment';
+import { Culture } from '../culture/culture';
 
 @Component({
   imports: [Travel, Enterteinment, Culture],
@@ -17,10 +17,10 @@ export class StronaG2 {
   }
 
   ShowEnterteinment() {
-    this.Showed = 'Enterteinment';
+    this.Showed = 'enterteinment';
   }
 
   ShowCulture() {
-    this.Showed = 'Culture';
+    this.Showed = 'culture';
   }
 }

@@ -200,7 +200,7 @@ export class Login {
 }
 
 
-===== C:\Users\damian.malawko\Desktop\Projekt 1111\src\app\kultura\Culture.spec.ts =====
+===== C:\Users\damian.malawko\Desktop\Projekt 1111\src\app\kultura\culture.spec.ts =====
 
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Kultura } from './kultura';
@@ -225,7 +225,7 @@ describe('Kultura', () => {
 });
 
 
-===== C:\Users\damian.malawko\Desktop\Projekt 1111\src\app\kultura\Culture.ts =====
+===== C:\Users\damian.malawko\Desktop\Projekt 1111\src\app\kultura\culture.ts =====
 
 import { Component } from '@angular/core';
 
@@ -322,7 +322,7 @@ import { Component } from '@angular/core';
 export class Travel {}
 
 
-===== C:\Users\damian.malawko\Desktop\Projekt 1111\src\app\rozrywka\Enterteinment.spec.ts =====
+===== C:\Users\damian.malawko\Desktop\Projekt 1111\src\app\rozrywka\enterteinment.spec.ts =====
 
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Enterteinment } from './rozrywka';
@@ -347,7 +347,7 @@ describe('Enterteinment', () => {
 });
 
 
-===== C:\Users\damian.malawko\Desktop\Projekt 1111\src\app\rozrywka\Enterteinment.ts =====
+===== C:\Users\damian.malawko\Desktop\Projekt 1111\src\app\rozrywka\enterteinment.ts =====
 
 import { Component } from '@angular/core';
 

@@ -3,10 +3,9 @@ import { LoginComponent } from './Components/login/login.component';
 import { Ch1Language } from './Components/Ch1Language/Ch1Language';
 import { Settings } from './Components/Settings/Settings';
 import { RegisterComponent } from './Components/register/register.component';
-import { Categories } from './Components/Categories/categories';
 
 @Component({
-  imports: [LoginComponent, Ch1Language, Settings, RegisterComponent, Categories],
+  imports: [LoginComponent, Ch1Language, Settings, RegisterComponent],
   selector: 'app-root',
   styleUrls: ['./app.css'],
   templateUrl: './app.html',

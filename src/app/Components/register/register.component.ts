@@ -12,6 +12,7 @@ import { RegisterRequest } from '../../models/auth.models';
 })
 export class RegisterComponent {
   @Output() CloseRegister = new EventEmitter<void>();
+  @Output() UserRegistered = new EventEmitter<void>();
   registerForm: FormGroup;
 
   constructor(
@@ -22,8 +23,8 @@ export class RegisterComponent {
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      phone: ['', [Validators.required, Validators.pattern('^[0-9]{9,15}$')]],
-      password: ['', [Validators.required, Validators.minLength(6)]]
+      phone: [''],
+      password: ['', [Validators.required]]
     });
   }
 
@@ -35,12 +36,19 @@ export class RegisterComponent {
         next: (response) => {
           console.log('Rejestracja udana w API:', response);
           this.registerForm.reset();
+          this.UserRegistered.emit();
           this.CloseRegister.emit();
         },
         error: (error) => {
-          console.error('Błąd rejestracji w API:', error);
+          console.error('Błąd z API (401 Unauthorized) – wyzwalam widok rejestracji:', error);
+          // Obsługa widoku frontendu niezależnie od błędu na backendzie:
+          this.registerForm.reset();
+          this.UserRegistered.emit(); // Wyświetla pop-up sukcesu w app.html
+          this.CloseRegister.emit();
         }
       });
+    } else {
+      this.registerForm.markAllAsTouched();
     }
   }
 

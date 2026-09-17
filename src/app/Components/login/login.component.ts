@@ -12,6 +12,7 @@ import { LoginRequest } from '../../models/auth.models';
 })
 export class LoginComponent {
   @Output() OpenRegister = new EventEmitter<void>();
+  @Output() UserLoggedIn = new EventEmitter<string>(); // Dodane do przekazania maila do profilu
 
   ShowForm1 = false;
   email = '';
@@ -39,6 +40,7 @@ export class LoginComponent {
         console.log('Token:', response.token);
         localStorage.setItem('token', response.token);
         this.ShowForm1 = false;
+        this.UserLoggedIn.emit(this.email); // Emitujemy maila po udanym logowaniu
       },
       error: (error: any) => {
         console.error('Błąd logowania:', error);

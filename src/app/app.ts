@@ -4,9 +4,19 @@ import { Ch1Language } from './Components/Ch1Language/Ch1Language';
 import { Settings } from './Components/Settings/Settings';
 import { RegisterComponent } from './Components/register/register.component';
 import { Categories } from './Components/Categories/categories';
+import { SearchingResults } from './Components/searching-results/searching-results';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
-  imports: [LoginComponent, Ch1Language, Settings, RegisterComponent, Categories],
+  imports: [
+    LoginComponent,
+    Ch1Language,
+    Settings,
+    RegisterComponent,
+    Categories,
+    SearchingResults,
+    RouterOutlet,
+  ],
   selector: 'app-root',
   styleUrls: ['./app.css', './View.css'],
   templateUrl: './app.html',

@@ -12,7 +12,11 @@
 
     <section class="VerticalLine"></section>
 
-    <button class="Main_Button">Tryb jasny</button>
+    <section class="Theme_Controls">
+      <button class="Main_Button">Tryb jasny</button>
+
+      <button class="Main_Button" (click)="ShowOrganizerPanel()">Organizer panel</button>
+    </section>
 
     <section class="VerticalLine"></section>
 
@@ -53,6 +57,10 @@
 
   @if (ShowRegister_Window) {
     <app-register (CloseRegister)="ShowRegister()"></app-register>
+  }
+
+  @if (ShowOrganizerPanel_Window) {
+    <app-organizer-panel></app-organizer-panel>
   }
 
 </main>

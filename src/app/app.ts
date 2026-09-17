@@ -3,9 +3,10 @@ import { LoginComponent } from './Components/login/login.component';
 import { Ch1Language } from './Components/Ch1Language/Ch1Language';
 import { Settings } from './Components/Settings/Settings';
 import { RegisterComponent } from './Components/register/register.component';
+import { OrganizerPanel } from './Components/organizer-panel/organizer-panel';
 
 @Component({
-  imports: [LoginComponent, Ch1Language, Settings, RegisterComponent],
+  imports: [LoginComponent, Ch1Language, Settings, RegisterComponent, OrganizerPanel],
   selector: 'app-root',
   styleUrls: ['./app.css'],
   templateUrl: './app.html',
@@ -16,6 +17,17 @@ export class App {
   ShowLanguage_Window = false;
   ShowSettings_Window = false;
   ShowRegister_Window = false;
+  ShowOrganizerPanel_Window = false;
+
+  ShowOrganizerPanel() {
+    this.ShowOrganizerPanel_Window = !this.ShowOrganizerPanel_Window;
+
+    if (this.ShowOrganizerPanel_Window) {
+      this.ShowLanguage_Window = false;
+      this.ShowSettings_Window = false;
+      this.ShowRegister_Window = false;
+    }
+  }
 
   ShowLanguage() {
     this.ShowSettings_Window = false;

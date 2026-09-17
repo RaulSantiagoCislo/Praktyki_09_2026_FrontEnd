@@ -39,6 +39,12 @@
   right: 0px;
 }
 
+.Theme_Controls {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
 .VerticalLine {
   margin: 20px;
   height: 30px;

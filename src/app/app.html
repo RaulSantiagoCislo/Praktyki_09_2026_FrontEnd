@@ -24,6 +24,12 @@
       {{ ChosenLanguage }}
     </button>
 
+    <button
+      class="Main_Button"
+      [routerLink]="router.url === '/admin-panel' ? '/' : '/admin-panel'">
+      Admin Panel
+    </button>
+
     <section id="VerticalLine"></section>
 
     <app-login (OpenRegister)="ShowRegister()"></app-login>
@@ -41,18 +47,22 @@
 </nav>
 
 <main>
-  <h1>Już dziś zorganizuj swój dzień z Global Logic e-bilet</h1>
+  @if (router.url !== '/admin-panel') {
+    <h1>Już dziś zorganizuj swój dzień z Global Logic e-bilet</h1>
 
-  @if (ShowLanguage_Window && !ShowSettings_Window) {
-    <app-Ch1Language (ChangingLanguage)="ChangeLanguage($event)"></app-Ch1Language>
+    @if (ShowLanguage_Window && !ShowSettings_Window) {
+      <app-Ch1Language (ChangingLanguage)="ChangeLanguage($event)"></app-Ch1Language>
+    }
+
+    @if (ShowSettings_Window && !ShowLanguage_Window) {
+      <app-Settings></app-Settings>
+    }
+
+    @if (ShowRegister_Window) {
+      <app-register (CloseRegister)="ShowRegister()"></app-register>
+    }
   }
 
-  @if (ShowSettings_Window && !ShowLanguage_Window) {
-    <app-Settings></app-Settings>
-  }
-
-  @if (ShowRegister_Window) {
-    <app-register (CloseRegister)="ShowRegister()"></app-register>
-  }
+  <router-outlet></router-outlet>
 
 </main>

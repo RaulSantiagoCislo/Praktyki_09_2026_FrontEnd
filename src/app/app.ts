@@ -3,9 +3,10 @@ import { LoginComponent } from './Components/login/login.component';
 import { Ch1Language } from './Components/Ch1Language/Ch1Language';
 import { Settings } from './Components/Settings/Settings';
 import { RegisterComponent } from './Components/register/register.component';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
-  imports: [LoginComponent, Ch1Language, Settings, RegisterComponent],
+  imports: [LoginComponent, Ch1Language, Settings, RegisterComponent, RouterLink, RouterOutlet],
   selector: 'app-root',
   styleUrls: ['./app.css'],
   templateUrl: './app.html',
@@ -40,4 +41,6 @@ export class App {
   ChangeLanguage(language: string) {
     this.ChosenLanguage = language;
   }
+
+  constructor(public router: Router) {}
 }

@@ -1,19 +1,19 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
-html,
-body {
-  margin: 0;
-  width: 100%;
-  min-height: 100vh;
-}
+/*html,*/
+/*body {*/
+/*  margin: 0;*/
+/*  width: 100%;*/
+/*  min-height: 100vh;*/
+/*}*/
 
-body {
-  background: cadetblue;
-}
+/*body {*/
+/*  background: cadetblue;*/
+/*}*/
 
-app-root {
-  display: block;
-  width: 100%;
-  min-height: 100vh;
-}
+/*app-root {*/
+/*  display: block;*/
+/*  width: 100%;*/
+/*  min-height: 100vh;*/
+/*}*/

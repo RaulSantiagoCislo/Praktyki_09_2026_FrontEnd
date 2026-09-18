@@ -1,53 +1,59 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { RouterLink } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+
+interface Event {
+  id: number;
+  category: string;
+  city: string;
+  street: string;
+  event_name: string;
+  date: string;
+  image: string;
+  description: string;
+}
 
 @Component({
-imports: [RouterLink],
-selector: 'app-searching-results',
-styleUrl: './searching-results.css',
-templateUrl: './searching-results.html',
+  imports: [RouterLink, FormsModule],
+  selector: 'app-searching-results',
+  styleUrl: './searching-results.css',
+  templateUrl: './searching-results.html',
 })
-export class SearchingResults {
-eventInformation = [
-{
-id: 1,
-category: 'Kategoria',
-name: 'Nazwa',
-date: '17.09.2026 - 19.09.2026',
-time: '8:00 - 9:00',
-location: 'Warszawa',
-},
-{
-id: 2,
-category: 'Kategoria',
-name: 'Nazwa',
-date: '17.09.2026 - 19.09.2026',
-time: '8:00 - 9:00',
-location: 'Warszawa',
-},
-{
-id: 3,
-category: 'Kategoria',
-name: 'Nazwa',
-date: '17.09.2026 - 19.09.2026',
-time: '8:00 - 9:00',
-location: 'Warszawa',
-},
-{
-id: 4,
-category: 'Kategoria',
-name: 'Nazwa',
-date: '17.09.2026 - 19.09.2026',
-time: '8:00 - 9:00',
-location: 'Warszawa',
-},
-{
-id: 5,
-category: 'Kategoria',
-name: 'Nazwa',
-date: '17.09.2026 - 19.09.2026',
-time: '8:00 - 9:00',
-location: 'Warszawa',
-},
-];
+export class SearchingResults implements OnInit {
+  eventInformation: Event[] = [];
+  filteredEvents: Event[] = [];
+
+  searchText = '';
+
+  private apiUrl = 'http://localhost:5015/events';
+
+  constructor(private http: HttpClient) {}
+
+  ngOnInit(): void {
+    this.loadEvents();
+  }
+
+  loadEvents(): void {
+    this.http.get<Event[]>(this.apiUrl).subscribe({
+      next: (events) => {
+        this.eventInformation = events;
+        this.filteredEvents = events;
+      },
+
+    });
+  }
+
+  searchEvents(): void {
+    const search = this.searchText.toLowerCase().trim();
+
+    if (!search) {
+      this.filteredEvents = this.eventInformation;
+      return;
+    }
+
+    this.filteredEvents = this.eventInformation.filter((event) =>
+      event.event_name.toLowerCase().includes(search),
+    );
+  }
 }

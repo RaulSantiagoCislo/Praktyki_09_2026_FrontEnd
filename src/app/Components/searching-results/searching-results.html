@@ -1,51 +1,53 @@
 <section class="w-[80%] mx-auto rounded-xl bg-orange-700 p-2">
+  <section class="flex justify-center">
+    <input type="search" placeholder="Szukaj..." [(ngModel)]="searchText" (input)="searchEvents()" class="w-full max-w-md rounded-lg border-2 border-orange-300 bg-orange-600 px-2 py-1 text-white outline-none placeholder:text-orange-200">
+  </section>
 
-<section class="flex justify-center">
-<input type="search" placeholder="Szukaj..." class="w-full max-w-md rounded-lg border-2 border-orange-300 bg-orange-600 px-2 py-1 text-white outline-none placeholder:text-orange-200">
-</section>
+  <section class="mt-2 grid grid-cols-4 gap-2">
+    @for (event of filteredEvents; track event.id) {
+      <section class="min-w-0 rounded-xl border-2 border-orange-300 bg-orange-600 p-2">
 
-<section class="mt-2 grid grid-cols-4 gap-2">
+        <section class="flex items-start justify-between gap-1">
+<span class="rounded-md bg-orange-300 px-2 py-1 text-xs text-orange-900">
+{{ event.category }}
+</span>
 
-@for (event of eventInformation; track event.id) {
+          <span class="text-right text-sm font-bold text-white">
+{{ event.event_name }}
+</span>
+        </section>
 
-<section class="min-w-0 rounded-xl border-2 border-orange-300 bg-orange-600 p-2">
+        <section class="mt-2 flex gap-2">
+          <section class="w-1/2 min-w-0 text-left">
+            <p class="text-xs text-orange-200">Data</p>
+            <p class="text-xs text-white">{{ event.date }}</p>
 
-<section class="flex items-start justify-between gap-1">
-<span class="rounded-md bg-orange-300 px-2 py-1 text-xs text-orange-900">{{ event.category }}</span>
-<span class="text-right text-sm font-bold text-white">{{ event.name }}</span>
-</section>
+            <p class="mt-1 text-xs text-orange-200">Lokalizacja</p>
+            <p class="text-xs text-white">{{ event.city }}</p>
 
-<section class="mt-2 flex gap-2">
+            <a routerLink="/pre-buying-site" class="mt-2 inline-block rounded-md bg-orange-300 px-2 py-1 text-xs font-bold text-orange-900">
+              Sprawdź bilet
+            </a>
+          </section>
 
-<section class="w-1/2 min-w-0 text-left">
+          <section class="w-1/2 min-w-0">
+            @if (event.image) {
+              <img [src]="event.image" [alt]="event.event_name" class="h-20 w-full rounded-md border-2 border-orange-300 object-cover">
+            } @else {
+              <section class="flex h-20 w-full items-center justify-center rounded-md border-2 border-orange-300 bg-orange-500 text-xs text-orange-100">
+                Obraz
+              </section>
+            }
+          </section>
+        </section>
 
-<p class="text-xs text-orange-200">Czas trwania</p>
-<p class="text-xs text-white">{{ event.date }}</p>
+      </section>
+    }
+  </section>
 
-<p class="mt-1 text-xs text-orange-200">Godzina</p>
-<p class="text-xs text-white">{{ event.time }}</p>
-
-<p class="mt-1 text-xs text-orange-200">Lokalizacja</p>
-<p class="text-xs text-white">{{ event.location }}</p>
-
-<a routerLink="/pre-buying-site" class="mt-2 inline-block rounded-md bg-orange-300 px-2 py-1 text-xs font-bold text-orange-900">Sprawdź bilet</a>
-
-</section>
-
-<section class="w-1/2 min-w-0">
-<section class="flex h-20 w-full items-center justify-center rounded-md border-2 border-orange-300 bg-orange-500 text-xs text-orange-100">Obraz</section>
-</section>
-
-</section>
-
-</section>
-
-}
-
-</section>
-
-
-
-
-
+  @if (filteredEvents.length === 0) {
+    <section class="mt-4 rounded-xl border-2 border-orange-300 bg-orange-600 p-4 text-center text-white">
+      Nie momożna znaleźć wydarzenia
+    </section>
+  }
 </section>

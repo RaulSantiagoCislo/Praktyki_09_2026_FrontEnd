@@ -1,0 +1,62 @@
+<div class="absolute right-4 bottom-1 flex items-center gap-2">
+  <button
+    class="btn btn-sm min-w-[120px] rounded-lg !bg-[darkorange] !text-white !border-2 !border-white px-3 py-2 shadow-md sm:btn-md"
+    type="button"
+    (click)="PokazRejestracje()">
+    Zarejestruj się
+  </button>
+
+  <button
+    class="btn btn-sm min-w-[120px] rounded-lg !bg-[darkorange] !text-white !border-2 !border-white px-3 py-2 shadow-lg sm:btn-md"
+    type="button"
+    (click)="UseButton()">
+    Zaloguj się
+  </button>
+</div>
+
+
+@if (ShowForm1) {
+
+  <div class="fixed inset-0 z-[1000] flex items-center justify-center bg-black/50 font-sans">
+    <div class="card w-[350px] max-w-[calc(100vw-2rem)] rounded-2xl border-2 border-orange-400 bg-white p-[30px] text-center shadow-[0_4px_20px_rgba(0,0,0,0.15)]">
+      <h2 class="mb-6 mt-0 text-[22px]">Logowanie</h2>
+
+      <form class="flex flex-col gap-3" (ngSubmit)="LoginUser()">
+        <div class="w-full">
+          <input
+            class="input input-bordered box-border w-full rounded-lg border border-gray-300 bg-white text-sm text-black"
+            type="email"
+            placeholder="Adres e-mail"
+            [(ngModel)]="email"
+            name="email"
+            required>
+        </div>
+
+        <div class="w-full">
+          <input
+            class="input input-bordered box-border w-full rounded-lg border border-gray-300 bg-white text-sm text-black"
+            type="password"
+            placeholder="Hasło"
+            [(ngModel)]="password"
+            name="password"
+            required>
+        </div>
+
+        <button
+          class="btn w-full rounded-lg !bg-[darkorange] !text-black !border-2 !border-white"
+          type="submit">
+          Zaloguj
+        </button>
+
+        <button
+          class="btn btn-outline border-black text-black w-full"
+          type="button"
+          (click)="UseButton()">
+          Anuluj
+        </button>
+      </form>
+
+    </div>
+
+  </div>
+}

@@ -55,7 +55,7 @@
   <!-- POP-UP LOGOWANIA -->
   @if (ShowLogin_Window && !isLoggedIn) {
     <app-login 
-      (CloseLogin)="ShowLogin()" 
+      (CloseLogin)="ShowLogin_Window = false" 
       (OpenRegister)="ShowRegister()" 
       (UserLoggedIn)="onLoggedIn($event)">
     </app-login>
@@ -64,7 +64,7 @@
   <!-- POP-UP REJESTRACJI -->
   @if (ShowRegister_Window) {
     <app-register 
-      (CloseRegister)="ShowRegister()" 
+      (CloseRegister)="ShowRegister_Window = false" 
       (UserRegistered)="onRegistered()">
     </app-register>
   }
@@ -72,7 +72,7 @@
   <!-- POP-UP PROFILU NA ŚRODKU EKRANU -->
   @if (ShowProfile_Window && isLoggedIn && currentUser) {
     <div style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0,0,0,0.75); display: flex; align-items: center; justify-content: center; z-index: 9999; backdrop-filter: blur(4px);">
-      <app-user-profile [user]="currentUser" (closeProfile)="ShowProfile()"></app-user-profile>
+      <app-user-profile [user]="currentUser" (closeProfile)="ShowProfile_Window = false"></app-user-profile>
     </div>
   }
 

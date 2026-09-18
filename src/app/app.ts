@@ -1,7 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { LoginComponent } from './Components/login/login.component';
-import { Ch1Language } from './Components/Ch1Language/Ch1Language';
-import { Settings } from './Components/Settings/Settings';
+import { Ch1Language } from './Components/Ch1Language/Ch1Language.component';
+import { Settings } from './Components/Settings/Settings.component';
 import { RegisterComponent } from './Components/register/register.component';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
 

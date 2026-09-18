@@ -2,10 +2,10 @@ import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/
 
 import { provideHttpClient } from '@angular/common/http';
 import { provideRouter, Routes } from '@angular/router';
-import { AdminPanel } from './Components/admin-panel/admin-panel';
+import { AdminPanelComponent } from './Components/admin-panel/admin-panel.component';
 
 const routes: Routes = [
-  { path: 'admin-panel', component: AdminPanel },
+  { path: 'admin-panel', component: AdminPanelComponent },
   { path: '**', redirectTo: '' },
 ];
 

@@ -18,7 +18,7 @@ import { RouterOutlet } from '@angular/router';
     RouterOutlet,
   ],
   selector: 'app-root',
-  styleUrls: ['./app.css', './View.css'],
+  styleUrls: ['./app.css'],
   templateUrl: './app.html',
 })
 export class App {

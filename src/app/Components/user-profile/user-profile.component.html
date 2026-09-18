@@ -1,0 +1,45 @@
+<div style="background-color: #1e293b; color: #ffffff; width: 100%; max-width: 400px; border-radius: 16px; padding: 24px; border: 1px solid #334155; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.5); position: relative; box-sizing: border-box;">
+  
+  <!-- Przycisk Zamknięcia (krzyżyk w rogu) -->
+  <button 
+    (click)="onClose()" 
+    style="position: absolute; top: 16px; right: 16px; background: none; border: none; color: #94a3b8; font-size: 20px; cursor: pointer; padding: 4px;">
+    ✕
+  </button>
+
+  <!-- Nagłówek z Awatarem -->
+  <div style="display: flex; align-items: center; gap: 16px; border-bottom: 1px solid #334155; padding-bottom: 16px; margin-bottom: 20px;">
+    <div style="width: 56px; height: 56px; border-radius: 50%; background-color: #f97316; color: #0f172a; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3);">
+      {{ user.email ? user.email[0].toUpperCase() : 'U' }}
+    </div>
+    <div>
+      <h2 style="margin: 0; font-size: 20px; font-weight: bold; color: #f8fafc;">Profil Użytkownika</h2>
+      <p style="margin: 4px 0 0 0; font-size: 13px; color: #94a3b8;">Jesteś z nami od {{ daysWithUs }} dni</p>
+    </div>
+  </div>
+
+  <!-- Dane konta -->
+  <div style="display: flex; flex-direction: column; gap: 12px;">
+    
+    <!-- E-mail -->
+    <div style="background-color: rgba(15,23,42,0.6); padding: 14px; border-radius: 12px; border: 1px solid rgba(51,65,85,0.5);">
+      <span style="display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: #f97316; margin-bottom: 4px; font-weight: 600;">E-mail</span>
+      <span style="font-size: 14px; font-weight: 500; color: #e2e8f0; word-break: break-all;">{{ user.email }}</span>
+    </div>
+
+    <!-- Numer telefonu -->
+    <div style="background-color: rgba(15,23,42,0.6); padding: 14px; border-radius: 12px; border: 1px solid rgba(51,65,85,0.5);">
+      <span style="display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: #f97316; margin-bottom: 4px; font-weight: 600;">Numer telefonu</span>
+      <span style="font-size: 14px; font-weight: 500; color: #e2e8f0;">{{ user.phone || 'Brak numeru' }}</span>
+    </div>
+
+  </div>
+
+  <!-- Przycisk Zamknij -->
+  <button 
+    (click)="onClose()" 
+    style="margin-top: 20px; width: 100%; padding: 10px; background-color: #334155; border: none; color: #f8fafc; font-weight: 500; border-radius: 8px; cursor: pointer; font-size: 14px;">
+    Zamknij
+  </button>
+
+</div>

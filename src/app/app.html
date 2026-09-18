@@ -5,38 +5,69 @@
 
     <section>
       <img
-        src="https://images.seeklogo.com/logo-png/36/2/global-logic-logo-png_seeklogo-360371.png"
-        width="100"
-        height="100">
+        src="https://images.seeklogo.com/logo-png/36/2/global-logic-logo-png_seeklogo-360371.png" width="100" height="100" alt="niezałądowało się">
     </section>
 
+    @if (isLoggedIn && currentUser) {
+      <button
+        (click)="ShowProfile()"
+        class="Main_Button">
+        Mój profil
+      </button>
+
+      <section class="VerticalLine"></section>
+
+      <button
+        (click)="Logout()"
+        class="Main_Button">
+        Wyloguj
+      </button>
+    } @else {
+      <button
+        class="Main_Button"
+        (click)="ShowRegister()">
+        Stwórz profil
+      </button>
+
+      <section class="VerticalLine"></section>
+
+      <button
+        class="Main_Button"
+        (click)="ShowLogin()">
+        Zaloguj się
+      </button>
+    }
+
     <section class="VerticalLine"></section>
 
-    <button class="Main_Button">Tryb jasny</button>
+    <button class="Main_Button">
+      Tryb jasny
+    </button>
 
     <section class="VerticalLine"></section>
 
-    <button class="Main_Button" (click)="ShowSettings()">
+    <button
+      class="Main_Button"
+      (click)="ShowSettings()">
       Pomoc
     </button>
 
     <section class="VerticalLine"></section>
 
-    <button class="Main_Button" (click)="ShowLanguage()">
+    <button
+      class="Main_Button"
+      (click)="ShowLanguage()">
       {{ ChosenLanguage }}
     </button>
 
     <section id="VerticalLine"></section>
 
-    <app-login (OpenRegister)="ShowRegister()"></app-login>
-
     <section id="Link_To_Ticket">
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Ikona_bilety.png?utm_source=pl.wikipedia.org&utm_campaign=index&utm_content=original"
-        width="50px"
-        height="50px">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Ikona_bilety.png?utm_source=pl.wikipedia.org&utm_campaign=index&utm_content=original"  width="50px"  height="50px" alt="niezałądowało się">
 
-      <a href="Later_Menu">Przejdź do e-biletów</a>
+<!--      <a href="Later_Menu">-->
+<!--        Przejdź do e-biletów-->
+<!--      </a>-->
     </section>
 
   </section>
@@ -44,9 +75,72 @@
 
 <main>
 
-  <app-categories></app-categories>
+  @if (isLoggedIn) {
+    <app-categories></app-categories>
+  }
 
-  <h1>Już dziś zorganizuj swój dzień z Global Logic e-bilet</h1>
+  <h1>
+    Już dziś zorganizuj swój dzień z Global Logic e-bilet
+  </h1>
+
+  @if (ShowLogin_Window && !isLoggedIn) {
+    <app-login
+      (CloseLogin)="ShowLogin_Window = false"
+      (OpenRegister)="ShowRegister()"
+      (UserLoggedIn)="onLoggedIn($event)">
+    </app-login>
+  }
+
+  @if (ShowRegister_Window) {
+    <app-register
+      (CloseRegister)="ShowRegister_Window = false"
+      (UserRegistered)="onRegistered()">
+    </app-register>
+  }
+
+  @if (ShowProfile_Window && isLoggedIn && currentUser) {
+    <div
+      class="fixed inset-0 z-50 flex items-center justify-center bg-black/75 backdrop-blur-sm">
+
+      <app-user-profile
+        [user]="currentUser"
+        (closeProfile)="ShowProfile_Window = false">
+      </app-user-profile>
+
+    </div>
+  }
+
+  @if (registrationSuccessMessage && !isLoggedIn) {
+    <div
+      class="fixed inset-0 z-50 flex items-center justify-center bg-black/75">
+
+      <div
+        class=" w-full max-w-90 rounded-2xl border border-slate-700 bg-slate-800 p-6 text-center text-white shadow-2xl">
+
+        <div
+          class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-emerald-400/30 bg-emerald-500/20 text-2xl font-bold text-emerald-400">
+          ✓
+        </div>
+
+        <h3
+          class="mb-2 text-xl font-bold text-slate-50">
+          Konto utworzone!
+        </h3>
+
+        <p
+          class="mb-5 text-sm text-slate-300">
+          Rejestracja przebiegła pomyślnie. Zaloguj się w menu głównym.
+        </p>
+
+        <button
+          (click)="closeRegistrationModal()"
+          class="btn w-full border-0 bg-indigo-500 text-white hover:bg-indigo-600">
+          Rozumiem, przejdź do logowania
+        </button>
+
+      </div>
+    </div>
+  }
 
   @if (ShowLanguage_Window && !ShowSettings_Window) {
     <app-Ch1Language
@@ -58,12 +152,7 @@
     <app-Settings></app-Settings>
   }
 
-  @if (ShowRegister_Window) {
-    <app-register
-      (CloseRegister)="ShowRegister()">
-    </app-register>
-  }
-
+  <!-- WYSZUKIWANIE ZAWSZE WIDOCZNE -->
   <app-searching-results></app-searching-results>
 
 </main>

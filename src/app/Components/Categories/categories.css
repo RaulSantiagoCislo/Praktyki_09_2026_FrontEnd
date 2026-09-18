@@ -1,0 +1,38 @@
+#SectionForCategories2 {
+
+
+
+  display: flex;
+  flex-direction: column;
+
+}
+
+#Categories1{
+  display: flex;
+  align-items: center;
+
+}
+
+#SectionForCategories {
+ width: 150px;
+  border:2px solid orange;
+background-color: white;
+}
+
+
+.ButtonsCategories{
+  width: 100%;
+  height: 50px;
+
+
+}
+
+#Categories1{
+  width: 100%;
+
+}
+
+button{
+
+  background-color: orange;
+}

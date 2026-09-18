@@ -7,7 +7,7 @@ import { LoginRequest, LoginResponse, RegisterRequest, RegisterResponse } from '
   providedIn: 'root',
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:5015/api/auth';
+  private apiUrl = 'http://localhost:5015';
 
   constructor(private http: HttpClient) {}
 
@@ -16,6 +16,6 @@ export class AuthService {
   }
 
   register(data: RegisterRequest): Observable<RegisterResponse> {
-    return this.http.post<RegisterResponse>(`${this.apiUrl}/register`, data);
+    return this.http.post<RegisterResponse>(`${this.apiUrl}/registration`, data);
   }
 }

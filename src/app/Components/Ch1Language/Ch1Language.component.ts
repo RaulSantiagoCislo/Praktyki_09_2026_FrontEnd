@@ -3,8 +3,8 @@ import { Component, Output, EventEmitter } from '@angular/core';
 @Component({
   imports: [],
   selector: 'app-Ch1Language',
-  styleUrl: './Ch1Language.css',
-  templateUrl: './Ch1Language.html',
+  styleUrl: './Ch1Language.component.css',
+  templateUrl: './Ch1Language.component.html',
 })
 export class Ch1Language {
   @Output() ChangingLanguage = new EventEmitter<string>();

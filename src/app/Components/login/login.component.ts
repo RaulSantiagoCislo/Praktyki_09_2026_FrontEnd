@@ -1,77 +1,48 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { AuthService } from '../../Services/authorization/auth';
+import { LoginRequest } from '../../models/auth.models';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
-  templateUrl: './login.html',
-  styleUrls: ['./login.css']
+  imports: [FormsModule],
+  templateUrl: './login.component.html',
+  styleUrl: './login.component.css',
 })
 export class LoginComponent {
-  @Output() CloseLogin = new EventEmitter<void>();
   @Output() OpenRegister = new EventEmitter<void>();
-  @Output() UserLoggedIn = new EventEmitter<any>();
-  
-  loginForm: FormGroup;
-  errorMessage: string | null = null;
-  showSuccessModal = false;
-  loggedInUserData: any = null;
 
-  constructor(
-    private fb: FormBuilder,
-    private authService: AuthService
-  ) {
-    this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required]]
+  ShowForm1 = false;
+  email = '';
+  password = '';
+
+  constructor(private authService: AuthService) {}
+
+  UseButton() {
+    this.ShowForm1 = !this.ShowForm1;
+  }
+
+  PokazRejestracje() {
+    this.OpenRegister.emit();
+  }
+
+  LoginUser() {
+    const data: LoginRequest = {
+      email: this.email,
+      password: this.password,
+    };
+
+    this.authService.login(data).subscribe({
+      next: (response: any) => {
+        console.log('Logowanie udane!');
+        console.log('Token:', response.token);
+        localStorage.setItem('token', response.token);
+        this.ShowForm1 = false;
+      },
+      error: (error: any) => {
+        console.error('Błąd logowania:', error);
+      },
     });
-  }
-
-  onSubmit(): void {
-    this.errorMessage = null;
-
-    if (this.loginForm.valid) {
-      const credentials = {
-        email: this.loginForm.value.email?.trim() || '',
-        password: this.loginForm.value.password || ''
-      };
-
-      this.authService.login(credentials as any).subscribe({
-        next: (response: any) => {
-          // Łączymy odpowiedź z API z danymi wpisanymi w formularzu
-          this.loggedInUserData = {
-            ...(typeof response === 'object' ? response : {}),
-            email: (typeof response === 'object' && response?.email) ? response.email : credentials.email,
-            phone: (typeof response === 'object' && response?.phone) ? response.phone : (response?.phoneNumber || response?.user?.phone || '')
-          };
-          
-          this.showSuccessModal = true;
-        },
-        error: (error) => {
-          if (error.status === 400 || error.status === 401) {
-            this.errorMessage = 'Nieprawidłowy e-mail lub hasło.';
-          } else {
-            this.errorMessage = 'Wystąpił błąd serwera. Spróbuj ponownie później.';
-          }
-        }
-      });
-    } else {
-      this.loginForm.markAllAsTouched();
-    }
-  }
-
-  closeSuccessModal(): void {
-    this.showSuccessModal = false;
-    this.UserLoggedIn.emit(this.loggedInUserData);
-    this.loginForm.reset();
-    this.CloseLogin.emit();
-  }
-
-  onCancel(): void {
-    this.loginForm.reset();
-    this.CloseLogin.emit();
   }
 }

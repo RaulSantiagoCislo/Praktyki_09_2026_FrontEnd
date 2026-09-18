@@ -1,31 +1,31 @@
-<div class="tlo-modala">
-  <div class="karta-modala">
-    <h2>Rejestracja</h2>
+<div class="fixed inset-0 z-[1000] flex items-center justify-center bg-black/50">
+  <div class="card w-[350px] max-w-[calc(100vw-2rem)] rounded-2xl bg-white p-[30px] text-center shadow-[0_4px_15px_rgba(0,0,0,0.2)]">
+    <h2 class="mb-5 font-sans">Rejestracja</h2>
 
-    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-      <div class="pole">
-        <input type="text" placeholder="Imię" formControlName="firstName">
+    <form class="flex flex-col gap-3" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="w-full">
+        <input class="box-border w-full rounded-lg border border-gray-300 p-2.5" type="text" placeholder="Imię" formControlName="firstName">
       </div>
 
-      <div class="pole">
-        <input type="text" placeholder="Nazwisko" formControlName="lastName">
+      <div class="w-full">
+        <input class="box-border w-full rounded-lg border border-gray-300 p-2.5" type="text" placeholder="Nazwisko" formControlName="lastName">
       </div>
 
-      <div class="pole">
-        <input type="email" placeholder="Adres e-mail" formControlName="email">
+      <div class="w-full">
+        <input class="box-border w-full rounded-lg border border-gray-300 p-2.5" type="email" placeholder="Adres e-mail" formControlName="email">
       </div>
 
-      <div class="pole">
-        <input type="tel" placeholder="Numer telefonu" formControlName="phone">
+      <div class="w-full">
+        <input class="box-border w-full rounded-lg border border-gray-300 p-2.5" type="tel" placeholder="Numer telefonu" formControlName="phone">
       </div>
 
-      <div class="pole">
-        <input type="password" placeholder="Hasło" formControlName="password">
+      <div class="w-full">
+        <input class="box-border w-full rounded-lg border border-gray-300 p-2.5" type="password" placeholder="Hasło" formControlName="password">
       </div>
 
       <button
         type="submit"
-        class="btn !bg-[darkorange] !text-black !border-2 !border-white w-full">
+        class="btn w-full rounded-lg !bg-[darkorange] !text-black !border-2 !border-white">
         Rejestruj się
       </button>
 

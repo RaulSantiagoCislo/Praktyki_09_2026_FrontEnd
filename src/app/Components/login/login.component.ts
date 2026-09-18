@@ -7,8 +7,7 @@ import { LoginRequest } from '../../models/auth.models';
   selector: 'app-login',
   standalone: true,
   imports: [FormsModule],
-  templateUrl: './login.html',
-  styleUrl: './login.css',
+  templateUrl: './login.component.html',
 })
 export class LoginComponent {
   @Output() OpenRegister = new EventEmitter<void>();

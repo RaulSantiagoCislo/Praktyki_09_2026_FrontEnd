@@ -8,7 +8,6 @@ import { RegisterRequest } from '../../models/auth.models';
   standalone: true,
   imports: [ReactiveFormsModule],
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
   @Output() CloseRegister = new EventEmitter<void>();

@@ -6,7 +6,7 @@ import { Enterteinment } from './ShowCategories/enterteinment/enterteinment';
 @Component({
   imports: [Culture, Enterteinment],
   selector: 'app-categories',
-  styleUrl: './categories.css',
+  // styleUrl: './categories.css',
   templateUrl: './categories.html',
 })
 export class Categories {

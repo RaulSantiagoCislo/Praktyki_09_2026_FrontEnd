@@ -1,21 +1,80 @@
-<section id="Background"> <H1>Choose Language</H1>
-  <input type="radio" name="Language" (change)="SelectLanguage('Polski')">
-  PL - {{ PolishLa }}
-  <img src="https://static.vecteezy.com/system/resources/previews/011/074/463/original/circle-flag-of-poland-free-vector.jpg">
+<section
+  class="fixed top-36 left-1/2 z-50 w-full max-w-md -translate-x-1/2 px-4">
 
-  <section class="Horizontal_Line"></section> <br>
-  <input type="radio" name="Language" (change)="SelectLanguage('Angielski')">
-  GB - {{ EnglishLa }}
-  <img src="https://static.vecteezy.com/system/resources/previews/045/832/855/non_2x/round-flag-of-uk-free-png.png">
+  <section
+    id="Background"
+    class="max-h-[70vh] w-full overflow-y-auto rounded-2xl border-2 border-black bg-white p-6">
 
-  <section class="Horizontal_Line"></section>
-  <input type="radio" name="Language" (change)="SelectLanguage('Niemiecki')">
-  DE - {{ GermanLa }}
-  <img src="https://static.vecteezy.com/system/resources/previews/011/571/346/original/circle-flag-of-germany-free-png.png">
+    <h1 class="text-2xl font-bold">
+      Choose Language
+    </h1>
 
-  <section class="Horizontal_Line"></section>
-  <input type="radio" name="Language" (change)="SelectLanguage('Francuski')">
-  FR - {{ FrenchLa }}
-  <img src="https://static.vecteezy.com/system/resources/previews/011/571/462/non_2x/circle-flag-of-france-free-png.png">
+    <div class="flex items-center gap-3 py-4">
+      <input
+        type="radio"
+        name="Language"
+        (change)="SelectLanguage('Polski')"
+        class="radio radio-warning">
 
-  <section class="Horizontal_Line"></section> </section>
+      <span>PL - {{ PolishLa }}</span>
+
+      <img
+        src="https://static.vecteezy.com/system/resources/previews/011/074/463/original/circle-flag-of-poland-free-vector.jpg"
+        class="h-12 w-12 object-contain"
+        alt="Polska">
+    </div>
+
+    <div class="h-1 w-[90%] mx-auto bg-orange-500"></div>
+
+    <div class="flex items-center gap-3 py-4">
+      <input
+        type="radio"
+        name="Language"
+        (change)="SelectLanguage('Angielski')"
+        class="radio radio-warning">
+
+      <span>GB - {{ EnglishLa }}</span>
+
+      <img
+        src="https://static.vecteezy.com/system/resources/previews/045/832/855/non_2x/round-flag-of-uk-free-png.png"
+        class="h-12 w-12 object-contain"
+        alt="Wielka Brytania">
+    </div>
+
+    <div class="h-1 w-[90%] mx-auto bg-orange-500"></div>
+
+    <div class="flex items-center gap-3 py-4">
+      <input
+        type="radio"
+        name="Language"
+        (change)="SelectLanguage('Niemiecki')"
+        class="radio radio-warning">
+
+      <span>DE - {{ GermanLa }}</span>
+
+      <img
+        src="https://static.vecteezy.com/system/resources/previews/011/571/346/original/circle-flag-of-germany-free-png.png"
+        class="h-12 w-12 object-contain"
+        alt="Niemcy">
+    </div>
+
+    <div class="h-1 w-[90%] mx-auto bg-orange-500"></div>
+
+    <div class="flex items-center gap-3 py-4">
+      <input
+        type="radio"
+        name="Language"
+        (change)="SelectLanguage('Francuski')"
+        class="radio radio-warning">
+
+      <span>FR - {{ FrenchLa }}</span>
+
+      <img
+        src="https://static.vecteezy.com/system/resources/previews/011/571/462/non_2x/circle-flag-of-france-free-vector.png"
+        class="h-12 w-12 object-contain"
+        alt="Francja">
+    </div>
+
+  </section>
+
+</section>

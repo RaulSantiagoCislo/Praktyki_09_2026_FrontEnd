@@ -1,74 +1,94 @@
 <header></header>
 
 <nav>
-  <section id="Main">
+  <section
+    class="relative mx-auto flex h-30 w-200 gap-7 rounded-3xl border-2 border-orange-500 bg-orange-600 p-2">
 
     <section>
       <img
-        src="https://images.seeklogo.com/logo-png/36/2/global-logic-logo-png_seeklogo-360371.png" width="100" height="100" alt="niezałądowało się">
+        src="https://images.seeklogo.com/logo-png/36/2/global-logic-logo-png_seeklogo-360371.png"
+        width="100"
+        height="100"
+        alt="nie załadowało się">
     </section>
 
     @if (isLoggedIn && currentUser) {
       <button
         (click)="ShowProfile()"
-        class="Main_Button">
+        class="h-12 bg-orange-600 text-white hover:bg-orange-500">
         Mój profil
       </button>
 
-      <section class="VerticalLine"></section>
+      <section
+        class="relative my-5 h-8 w-1 bg-orange-500">
+      </section>
 
       <button
         (click)="Logout()"
-        class="Main_Button">
+        class="h-12 bg-orange-600 text-white hover:bg-orange-500">
         Wyloguj
       </button>
     } @else {
       <button
-        class="Main_Button"
+        class="h-12 bg-orange-600 text-white hover:bg-orange-500"
         (click)="ShowRegister()">
         Stwórz profil
       </button>
 
-      <section class="VerticalLine"></section>
+      <section
+        class="relative my-5 h-8 w-1 bg-orange-500">
+      </section>
 
       <button
-        class="Main_Button"
+        class="h-12 bg-orange-600 text-white hover:bg-orange-500"
         (click)="ShowLogin()">
         Zaloguj się
       </button>
     }
 
-    <section class="VerticalLine"></section>
+    <section
+      class="relative my-5 h-8 w-1 bg-orange-500">
+    </section>
 
-    <button class="Main_Button">
+    <button
+      class="h-12 bg-orange-600 text-white hover:bg-orange-500">
       Tryb jasny
     </button>
 
-    <section class="VerticalLine"></section>
+    <section
+      class="relative my-5 h-8 w-1 bg-orange-500">
+    </section>
 
     <button
-      class="Main_Button"
+      class="h-12 bg-orange-600 text-white hover:bg-orange-500"
       (click)="ShowSettings()">
       Pomoc
     </button>
 
-    <section class="VerticalLine"></section>
+    <section
+      class="relative my-5 h-8 w-1 bg-orange-500">
+    </section>
 
     <button
-      class="Main_Button"
+      class="h-12 bg-orange-600 text-white hover:bg-orange-500"
       (click)="ShowLanguage()">
       {{ ChosenLanguage }}
     </button>
 
-    <section id="VerticalLine"></section>
-
-    <section id="Link_To_Ticket">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Ikona_bilety.png?utm_source=pl.wikipedia.org&utm_campaign=index&utm_content=original"  width="50px"  height="50px" alt="niezałądowało się">
-
-<!--      <a href="Later_Menu">-->
-<!--        Przejdź do e-biletów-->
-<!--      </a>-->
+    <section
+      class="absolute right-10 top-[70px] h-1 w-[620px] bg-orange-500">
     </section>
+
+<!--    <section-->
+<!--      class="absolute right-[300px] top-[70px] flex h-10 w-[140px] items-center rounded-[10px] border-2 border-orange-500 bg-white text-orange-500">-->
+
+<!--      <img-->
+<!--        src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Ikona_bilety.png?utm_source=pl.wikipedia.org&utm_campaign=index&utm_content=original"-->
+<!--        width="50"-->
+<!--        height="50"-->
+<!--        alt="nie załadowało się">-->
+
+<!--    </section>-->
 
   </section>
 </nav>
@@ -79,8 +99,9 @@
     <app-categories></app-categories>
   }
 
-  <h1>
-    Już dziś zorganizuj swój dzień z Global Logic e-bilet
+  <h1
+    class="font-bold text-white">
+    Już dziś zorganizuj swój dzień z GlobalLogic e-bilet
   </h1>
 
   @if (ShowLogin_Window && !isLoggedIn) {
@@ -115,7 +136,7 @@
       class="fixed inset-0 z-50 flex items-center justify-center bg-black/75">
 
       <div
-        class=" w-full max-w-90 rounded-2xl border border-slate-700 bg-slate-800 p-6 text-center text-white shadow-2xl">
+        class="w-full max-w-md rounded-2xl border border-slate-700 bg-slate-800 p-6 text-center text-white shadow-2xl">
 
         <div
           class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-emerald-400/30 bg-emerald-500/20 text-2xl font-bold text-emerald-400">
@@ -152,7 +173,6 @@
     <app-Settings></app-Settings>
   }
 
-  <!-- WYSZUKIWANIE ZAWSZE WIDOCZNE -->
   <app-searching-results></app-searching-results>
 
 </main>

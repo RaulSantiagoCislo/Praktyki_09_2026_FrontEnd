@@ -17,7 +17,7 @@ interface Event {
 @Component({
   imports: [RouterLink, FormsModule],
   selector: 'app-searching-results',
-  styleUrl: './searching-results.css',
+  // styleUrl: './searching-results.css',
   templateUrl: './searching-results.html',
 })
 export class SearchingResults implements OnInit {

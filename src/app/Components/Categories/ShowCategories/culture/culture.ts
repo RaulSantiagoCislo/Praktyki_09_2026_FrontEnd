@@ -4,6 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-culture',
   imports: [],
   templateUrl: './culture.html',
-  styleUrl: './culture.css',
+  // styleUrl: './culture.css',
 })
 export class Culture {}

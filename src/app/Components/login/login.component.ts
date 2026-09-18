@@ -8,13 +8,13 @@ import { AuthService } from '../../Services/authorization/auth';
   standalone: true,
   imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './login.html',
-  styleUrls: ['./login.css']
+  // styleUrls: ['./login.css']
 })
 export class LoginComponent {
   @Output() CloseLogin = new EventEmitter<void>();
   @Output() OpenRegister = new EventEmitter<void>();
   @Output() UserLoggedIn = new EventEmitter<any>();
-  
+
   loginForm: FormGroup;
   errorMessage: string | null = null;
   showSuccessModal = false;
@@ -47,7 +47,7 @@ export class LoginComponent {
             email: (typeof response === 'object' && response?.email) ? response.email : credentials.email,
             phone: (typeof response === 'object' && response?.phone) ? response.phone : (response?.phoneNumber || response?.user?.phone || '')
           };
-          
+
           this.showSuccessModal = true;
         },
         error: (error) => {

@@ -3,15 +3,21 @@ import { LoginComponent } from './Components/login/login.component';
 import { Ch1Language } from './Components/Ch1Language/Ch1Language';
 import { Settings } from './Components/Settings/Settings';
 import { RegisterComponent } from './Components/register/register.component';
+import { Categories } from './Components/Categories/categories';
+import { SearchingResults } from './Components/searching-results/searching-results';
+import { RouterOutlet } from '@angular/router';
 import { UserProfileComponent, UserData } from './Components/user-profile/user-profile.component';
 
 @Component({
   imports: [
-    LoginComponent, 
-    Ch1Language, 
-    Settings, 
-    RegisterComponent, 
-    UserProfileComponent
+    LoginComponent,
+    Ch1Language,
+    Settings,
+    RegisterComponent,
+    Categories,
+    SearchingResults,
+    RouterOutlet,
+    UserProfileComponent,
   ],
   selector: 'app-root',
   styleUrls: ['./app.css'],
@@ -84,12 +90,13 @@ export class App {
       emailVal = userData;
     } else if (userData && typeof userData === 'object') {
       emailVal = userData.email || userData.user?.email || userData.username || '';
-      phoneVal = userData.phone || userData.user?.phone || userData.phoneNumber || userData.telephone || '';
+      phoneVal =
+        userData.phone || userData.user?.phone || userData.phoneNumber || userData.telephone || '';
     }
 
-    // Jeśli backend nie podał numeru telefonu, wyciągamy go z pamieci podręcznej pod ten email
     if (!phoneVal && emailVal) {
       const savedPhone = localStorage.getItem(`user_phone_${emailVal.toLowerCase()}`);
+
       if (savedPhone) {
         phoneVal = savedPhone;
       }
@@ -98,7 +105,7 @@ export class App {
     this.currentUser = {
       email: emailVal || 'uzytkownik@globallogic.com',
       phone: phoneVal || '',
-      createdAt: userData?.createdAt ? new Date(userData.createdAt) : new Date()
+      createdAt: userData?.createdAt ? new Date(userData.createdAt) : new Date(),
     };
   }
 

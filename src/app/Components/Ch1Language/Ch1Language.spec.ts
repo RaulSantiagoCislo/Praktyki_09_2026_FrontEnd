@@ -5,7 +5,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './Ch1Language.html',
-  styleUrl: './Ch1Language.css',
+  // styleUrl: './Ch1Language.css',
 })
 export class Ch1Language {
   @Output() Close = new EventEmitter<void>();

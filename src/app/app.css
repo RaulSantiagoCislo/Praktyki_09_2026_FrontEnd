@@ -1,64 +1,74 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-#Main {
-  background-color: darkorange;
-  border: 2px solid orange;
-  width: 800px;
-  height: 120px;
-  border-radius: 30px;
-  margin: 0 auto;
-  padding: 10px;
-  display: flex;
-  position: relative;
-  gap: 30px;
-}
 
-#Link_To_Ticket {
-  background-color: white;
-  border: 2px solid orange;
-  color: orange !important;
-  text-decoration: none !important;
-  width: 140px;
-  height: 40px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  top: 70px;
-  position: absolute;
-  right: 300px;
-}
+/*te napwno nie*/
+/*@import "tailwindcss/preflight";*/
+/*@import "tailwindcss/utilities";*/
 
-.Main_Button {
-  height: 50px;
-  background-color: darkorange;
-  color: white;
-  border: none;
-  float: right;
-  right: 0px;
-}
 
-.VerticalLine {
-  margin: 20px;
-  height: 30px;
-  width: 4px;
-  background-color: orange;
-  right: 0px;
-  position: relative;
-}
+/*te stare*/
+/*@tailwind base;*/
+/*@tailwind components;*/
+/*@tailwind utilities;*/
 
-#VerticalLine {
-  position: absolute;
-  margin-top: 50px;
-  right: 0px;
-  margin-right: 40px;
-  height: 4px;
-  width: 620px;
-  background-color: orange;
-}
 
-h1 {
-  color: white;
-  font-weight: bold;
-}
+/*#Main {*/
+/*  background-color: darkorange;*/
+/*  border: 2px solid orange;*/
+/*  width: 800px;*/
+/*  height: 120px;*/
+/*  border-radius: 30px;*/
+/*  margin: 0 auto;*/
+/*  padding: 10px;*/
+/*  display: flex;*/
+/*  position: relative;*/
+/*  gap: 30px;*/
+/*}*/
+
+/*#Link_To_Ticket {*/
+/*  background-color: white;*/
+/*  border: 2px solid orange;*/
+/*  color: orange !important;*/
+/*  text-decoration: none !important;*/
+/*  width: 140px;*/
+/*  height: 40px;*/
+/*  border-radius: 10px;*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*  top: 70px;*/
+/*  position: absolute;*/
+/*  right: 300px;*/
+/*}*/
+
+/*.Main_Button {*/
+/*  height: 50px;*/
+/*  background-color: darkorange;*/
+/*  color: white;*/
+/*  border: none;*/
+/*  float: right;*/
+/*  right: 0px;*/
+/*}*/
+
+/*.VerticalLine {*/
+/*  margin: 20px;*/
+/*  height: 30px;*/
+/*  width: 4px;*/
+/*  background-color: orange;*/
+/*  right: 0px;*/
+/*  position: relative;*/
+/*}*/
+
+/*#VerticalLine {*/
+/*  position: absolute;*/
+/*  margin-top: 50px;*/
+/*  right: 0px;*/
+/*  margin-right: 40px;*/
+/*  height: 4px;*/
+/*  width: 620px;*/
+/*  background-color: orange;*/
+/*}*/
+
+/*h1 {*/
+/*  color: white;*/
+/*  font-weight: bold;*/
+/*}*/

@@ -3,7 +3,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
 @Component({
   imports: [],
   selector: 'app-Ch1Language',
-  styleUrl: './Ch1Language.css',
+  // styleUrl: './Ch1Language.css',
   templateUrl: './Ch1Language.html',
 })
 export class Ch1Language {

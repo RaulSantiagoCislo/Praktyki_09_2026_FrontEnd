@@ -1,0 +1,77 @@
+<section
+  class="fixed left-1/2 top-20 z-50 w-[80%] max-w-300 -translate-x-1/2 rounded-xl bg-orange-700 p-4">
+
+  <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+
+    <div
+      class="flex min-h-125 items-center justify-center rounded-xl border-2 border-orange-300 bg-orange-500 text-xl text-orange-100">
+      Obraz
+    </div>
+
+    <div>
+
+      <div
+        class="rounded-xl border-2 border-orange-300 bg-orange-600 p-4 text-white">
+
+        <h1 class="text-3xl font-bold">
+          {{ eventInformation.name }}
+        </h1>
+
+        <p class="mt-2">
+          <span class="font-bold">Czas trwania:</span>
+          {{ eventInformation.date }}
+        </p>
+
+        <p class="mt-2">
+          <span class="font-bold">Miejsce:</span>
+          {{ eventInformation.location }}
+        </p>
+
+        <p class="mt-2">
+          <span class="font-bold">Organizator:</span>
+          {{ eventInformation.organizer }}
+        </p>
+
+      </div>
+
+      <div class="mt-4 max-h-90 overflow-y-auto">
+
+        @for (ticket of tickets; track ticket.id) {
+
+          <div
+            class="mt-2 grid grid-cols-1 gap-4 rounded-xl border-2 border-orange-300 bg-orange-600 p-4 text-white md:grid-cols-3">
+
+            <div>
+              <p class="text-sm text-orange-200">Dzień</p>
+              <p class="font-bold">{{ ticket.date }}</p>
+            </div>
+
+            <div>
+              <p class="text-sm text-orange-200">Godzina</p>
+              <p class="font-bold">{{ ticket.time }}</p>
+            </div>
+
+            <div class="flex items-center justify-start md:justify-end">
+              <button
+                class="btn bg-orange-300 text-orange-900 hover:bg-orange-200">
+                Zakup Bilet
+              </button>
+            </div>
+
+          </div>
+
+        }
+
+      </div>
+
+      <button
+        class="btn mt-4 ml-auto mr-2 block w-full bg-orange-300 text-orange-900 hover:bg-orange-200 md:w-1/3"
+        (click)="Exit()">
+        Wyjdź
+      </button>
+
+    </div>
+
+  </div>
+
+</section>

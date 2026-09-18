@@ -1,0 +1,64 @@
+<section
+  id="SectionForCategories"
+  class="w-fit min-w-40 border-2 border-orange-500 bg-white">
+
+  <button
+    (click)="toggleCategories()"
+    id="Categories1"
+    class="flex w-full items-center justify-center gap-2 bg-orange-500 p-2">
+
+    Kategorie
+
+    @if (isShown) {
+      <img
+        src="https://www.pngmart.com/files/23/Black-X-PNG-Pic.png"
+        class="h-10 w-10 object-contain"
+        alt="Zamknij kategorie">
+    }
+
+    @if (!isShown) {
+      <img
+        src="https://www.svgrepo.com/show/533653/chevron-down.svg"
+        class="h-10 w-10 object-contain"
+        alt="Rozwiń kategorie">
+    }
+
+  </button>
+
+  <section
+    id="SectionForCategories2"
+    class="flex flex-col">
+
+    @if (isShown) {
+
+      <button
+        (mouseenter)="setHover('entertainment')"
+        (mouseleave)="setHover(null)"
+        class="h-12 w-full bg-orange-500 hover:bg-orange-400">
+
+        Rozrywka
+
+      </button>
+
+      @if (hoveredPage === 'entertainment') {
+        <app-enterteinment></app-enterteinment>
+      }
+
+      <button
+        (mouseenter)="setHover('culture')"
+        (mouseleave)="setHover(null)"
+        class="h-12 w-full bg-orange-500 hover:bg-orange-400">
+
+        Kultura
+
+      </button>
+
+      @if (hoveredPage === 'culture') {
+        <app-culture></app-culture>
+      }
+
+    }
+
+  </section>
+
+</section>

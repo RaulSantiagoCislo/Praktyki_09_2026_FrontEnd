@@ -1,105 +1,180 @@
 <header></header>
 
 <nav>
-  <section id="Main">
+  <section
+    class="relative mx-auto flex h-30 w-200 gap-7 rounded-3xl border-2 border-orange-500 bg-orange-600 p-2">
 
     <section>
       <img
         src="https://images.seeklogo.com/logo-png/36/2/global-logic-logo-png_seeklogo-360371.png"
         width="100"
-        height="100">
+        height="100"
+        alt="nie załadowało się">
     </section>
 
-    <!-- PRZYCISKI W POZIOMIE DLA ZALOGOWANEGO UŻYTKOWNIKA -->
     @if (isLoggedIn && currentUser) {
-      <button (click)="ShowProfile()" class="Main_Button">Mój profil</button>
-      <section class="VerticalLine"></section>
-      <button (click)="Logout()" class="Main_Button">Wyloguj</button>
+      <button
+        (click)="ShowProfile()"
+        class="h-12 bg-orange-600 text-white hover:bg-orange-500">
+        Mój profil
+      </button>
+
+      <section
+        class="relative my-5 h-8 w-1 bg-orange-500">
+      </section>
+
+      <button
+        (click)="Logout()"
+        class="h-12 bg-orange-600 text-white hover:bg-orange-500">
+        Wyloguj
+      </button>
     } @else {
-      <button class="Main_Button" (click)="ShowRegister()">Stwórz profil</button>
-      <section class="VerticalLine"></section>
-      <button class="Main_Button" (click)="ShowLogin()">Zaloguj się</button>
+      <button
+        class="h-12 bg-orange-600 text-white hover:bg-orange-500"
+        (click)="ShowRegister()">
+        Stwórz profil
+      </button>
+
+      <section
+        class="relative my-5 h-8 w-1 bg-orange-500">
+      </section>
+
+      <button
+        class="h-12 bg-orange-600 text-white hover:bg-orange-500"
+        (click)="ShowLogin()">
+        Zaloguj się
+      </button>
     }
 
-    <section class="VerticalLine"></section>
+    <section
+      class="relative my-5 h-8 w-1 bg-orange-500">
+    </section>
 
-    <button class="Main_Button">Tryb jasny</button>
+    <button
+      class="h-12 bg-orange-600 text-white hover:bg-orange-500">
+      Tryb jasny
+    </button>
 
-    <section class="VerticalLine"></section>
+    <section
+      class="relative my-5 h-8 w-1 bg-orange-500">
+    </section>
 
-    <button class="Main_Button" (click)="ShowSettings()">Pomoc</button>
+    <button
+      class="h-12 bg-orange-600 text-white hover:bg-orange-500"
+      (click)="ShowSettings()">
+      Pomoc
+    </button>
 
-    <section class="VerticalLine"></section>
+    <section
+      class="relative my-5 h-8 w-1 bg-orange-500">
+    </section>
 
-    <button class="Main_Button" (click)="ShowLanguage()">
+    <button
+      class="h-12 bg-orange-600 text-white hover:bg-orange-500"
+      (click)="ShowLanguage()">
       {{ ChosenLanguage }}
     </button>
 
-    <section id="VerticalLine"></section>
-
-    <section id="Link_To_Ticket">
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Ikona_bilety.png?utm_source=pl.wikipedia.org&utm_campaign=index&utm_content=original"
-        width="50px"
-        height="50px">
-
-      <a href="Later_Menu">Przejdź do e-biletów</a>
+    <section
+      class="absolute right-10 top-[70px] h-1 w-[620px] bg-orange-500">
     </section>
+
+<!--    <section-->
+<!--      class="absolute right-[300px] top-[70px] flex h-10 w-[140px] items-center rounded-[10px] border-2 border-orange-500 bg-white text-orange-500">-->
+
+<!--      <img-->
+<!--        src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Ikona_bilety.png?utm_source=pl.wikipedia.org&utm_campaign=index&utm_content=original"-->
+<!--        width="50"-->
+<!--        height="50"-->
+<!--        alt="nie załadowało się">-->
+
+<!--    </section>-->
 
   </section>
 </nav>
 
 <main>
-  <h1>Już dziś zorganizuj swój dzień z Global Logic e-bilet</h1>
 
-  <!-- POP-UP LOGOWANIA -->
+  @if (isLoggedIn) {
+    <app-categories></app-categories>
+  }
+
+  <h1
+    class="font-bold text-white">
+    Już dziś zorganizuj swój dzień z GlobalLogic e-bilet
+  </h1>
+
   @if (ShowLogin_Window && !isLoggedIn) {
-    <app-login 
-      (CloseLogin)="ShowLogin_Window = false" 
-      (OpenRegister)="ShowRegister()" 
+    <app-login
+      (CloseLogin)="ShowLogin_Window = false"
+      (OpenRegister)="ShowRegister()"
       (UserLoggedIn)="onLoggedIn($event)">
     </app-login>
   }
 
-  <!-- POP-UP REJESTRACJI -->
   @if (ShowRegister_Window) {
-    <app-register 
-      (CloseRegister)="ShowRegister_Window = false" 
+    <app-register
+      (CloseRegister)="ShowRegister_Window = false"
       (UserRegistered)="onRegistered()">
     </app-register>
   }
 
-  <!-- POP-UP PROFILU NA ŚRODKU EKRANU -->
   @if (ShowProfile_Window && isLoggedIn && currentUser) {
-    <div style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0,0,0,0.75); display: flex; align-items: center; justify-content: center; z-index: 9999; backdrop-filter: blur(4px);">
-      <app-user-profile [user]="currentUser" (closeProfile)="ShowProfile_Window = false"></app-user-profile>
+    <div
+      class="fixed inset-0 z-50 flex items-center justify-center bg-black/75 backdrop-blur-sm">
+
+      <app-user-profile
+        [user]="currentUser"
+        (closeProfile)="ShowProfile_Window = false">
+      </app-user-profile>
+
     </div>
   }
 
-  <!-- POP-UP SUKCESU REJESTRACJI -->
   @if (registrationSuccessMessage && !isLoggedIn) {
-    <div style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0,0,0,0.75); display: flex; align-items: center; justify-content: center; z-index: 9999;">
-      <div style="background-color: #1e293b; color: #ffffff; width: 100%; max-width: 360px; border-radius: 16px; padding: 24px; border: 1px solid #334155; text-align: center;">
-        <div style="width: 48px; height: 48px; background-color: rgba(16,185,129,0.2); color: #34d399; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px auto; font-size: 24px; font-weight: bold; border: 1px solid rgba(16,185,129,0.3);">
+    <div
+      class="fixed inset-0 z-50 flex items-center justify-center bg-black/75">
+
+      <div
+        class="w-full max-w-md rounded-2xl border border-slate-700 bg-slate-800 p-6 text-center text-white shadow-2xl">
+
+        <div
+          class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-emerald-400/30 bg-emerald-500/20 text-2xl font-bold text-emerald-400">
           ✓
         </div>
-        <h3 style="margin: 0 0 8px 0; color: #f8fafc; font-size: 20px; font-weight: bold;">Konto utworzone!</h3>
-        <p style="margin: 0 0 20px 0; font-size: 14px; color: #cbd5e1;">Rejestracja przebiegła pomyślnie. Zaloguj się w menu głównym.</p>
-        <button 
-          (click)="closeRegistrationModal()" 
-          style="width: 100%; padding: 10px; background-color: #6366f1; border: none; color: #ffffff; font-weight: bold; border-radius: 8px; cursor: pointer; font-size: 14px;">
+
+        <h3
+          class="mb-2 text-xl font-bold text-slate-50">
+          Konto utworzone!
+        </h3>
+
+        <p
+          class="mb-5 text-sm text-slate-300">
+          Rejestracja przebiegła pomyślnie. Zaloguj się w menu głównym.
+        </p>
+
+        <button
+          (click)="closeRegistrationModal()"
+          class="btn w-full border-0 bg-indigo-500 text-white hover:bg-indigo-600">
           Rozumiem, przejdź do logowania
         </button>
+
       </div>
     </div>
   }
 
   @if (ShowLanguage_Window && !ShowSettings_Window) {
-    <app-Ch1Language (ChangingLanguage)="ChangeLanguage($event)"></app-Ch1Language>
+    <app-Ch1Language
+      (ChangingLanguage)="ChangeLanguage($event)">
+    </app-Ch1Language>
   }
 
   @if (ShowSettings_Window && !ShowLanguage_Window) {
     <app-Settings></app-Settings>
   }
 
+  <app-searching-results></app-searching-results>
+
 </main>
+
+<router-outlet></router-outlet>

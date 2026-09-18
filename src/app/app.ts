@@ -23,55 +23,89 @@ export class App {
   ShowLanguage_Window = false;
   ShowSettings_Window = false;
   ShowRegister_Window = false;
+  ShowLogin_Window = false;
+  ShowProfile_Window = false;
 
-  // Nowe zmienne dla logowania i profilu
   isLoggedIn = false;
   currentUser: UserData | null = null;
   registrationSuccessMessage = false;
 
+  ShowLogin() {
+    this.closeAllWindows();
+    this.ShowLogin_Window = true;
+  }
+
+  ShowRegister() {
+    this.closeAllWindows();
+    this.ShowRegister_Window = true;
+  }
+
+  ShowProfile() {
+    this.closeAllWindows();
+    this.ShowProfile_Window = !this.ShowProfile_Window;
+  }
+
   ShowLanguage() {
-    this.ShowSettings_Window = false;
-    this.ShowRegister_Window = false;
+    this.closeAllWindows();
     this.ShowLanguage_Window = !this.ShowLanguage_Window;
   }
 
   ShowSettings() {
-    this.ShowLanguage_Window = false;
-    this.ShowRegister_Window = false;
+    this.closeAllWindows();
     this.ShowSettings_Window = !this.ShowSettings_Window;
   }
 
-  ShowRegister() {
+  private closeAllWindows() {
     this.ShowLanguage_Window = false;
     this.ShowSettings_Window = false;
-    this.ShowRegister_Window = !this.ShowRegister_Window;
+    this.ShowRegister_Window = false;
+    this.ShowLogin_Window = false;
   }
 
-  // Obsługa po udanej rejestracji
   onRegistered() {
     this.ShowRegister_Window = false;
     this.registrationSuccessMessage = true;
   }
 
-  // Zamykanie pop-upu informującego o utworzeniu konta
   closeRegistrationModal() {
     this.registrationSuccessMessage = false;
+    this.ShowLogin();
   }
 
-  // Obsługa po udanym zalogowaniu
-  onLoggedIn(email: string) {
+  onLoggedIn(userData: any) {
     this.isLoggedIn = true;
+    this.ShowLogin_Window = false;
     this.registrationSuccessMessage = false;
+
+    let emailVal = '';
+    let phoneVal = '';
+
+    if (typeof userData === 'string') {
+      emailVal = userData;
+    } else if (userData && typeof userData === 'object') {
+      emailVal = userData.email || userData.user?.email || userData.username || '';
+      phoneVal = userData.phone || userData.user?.phone || userData.phoneNumber || userData.telephone || '';
+    }
+
+    // Jeśli backend nie podał numeru telefonu, wyciągamy go z pamieci podręcznej pod ten email
+    if (!phoneVal && emailVal) {
+      const savedPhone = localStorage.getItem(`user_phone_${emailVal.toLowerCase()}`);
+      if (savedPhone) {
+        phoneVal = savedPhone;
+      }
+    }
+
     this.currentUser = {
-      email: email || 'uzytkownik@globallogic.com',
-      createdAt: new Date()
+      email: emailVal || 'uzytkownik@globallogic.com',
+      phone: phoneVal || '',
+      createdAt: userData?.createdAt ? new Date(userData.createdAt) : new Date()
     };
   }
 
-  // Wylogowanie
   Logout() {
     this.isLoggedIn = false;
     this.currentUser = null;
+    this.ShowProfile_Window = false;
   }
 
   ChosenLanguage = 'Polish';

@@ -1,9 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 export interface UserData {
   email: string;
-  createdAt: Date;
+  phone?: string;
+  createdAt?: Date;
 }
 
 @Component({
@@ -12,17 +13,36 @@ export interface UserData {
   imports: [CommonModule],
   templateUrl: './user-profile.component.html'
 })
-export class UserProfileComponent implements OnInit {
-  @Input() user: UserData = {
-    email: 'jan.kowalski@globallogic.com',
-    createdAt: new Date('2026-03-10T14:20:00')
-  };
+export class UserProfileComponent {
+  private _user: UserData = { email: '', phone: '' };
+  daysWithUs: number = 1;
 
-  daysWithUs: number = 0;
+  @Input() 
+  set user(value: UserData | null) {
+    if (value) {
+      this._user = value;
+      this.calculateDays();
+    }
+  }
 
-  ngOnInit() {
-    const now = new Date();
-    const created = new Date(this.user.createdAt);
-    this.daysWithUs = Math.floor(Math.abs(now.getTime() - created.getTime()) / (1000 * 60 * 60 * 24));
+  get user(): UserData {
+    return this._user;
+  }
+
+  @Output() closeProfile = new EventEmitter<void>();
+
+  private calculateDays() {
+    if (this._user.createdAt) {
+      const today = new Date();
+      const created = new Date(this._user.createdAt);
+      const diffTime = Math.abs(today.getTime() - created.getTime());
+      this.daysWithUs = Math.max(1, Math.ceil(diffTime / (1000 * 60 * 60 * 24)));
+    } else {
+      this.daysWithUs = 1;
+    }
+  }
+
+  onClose() {
+    this.closeProfile.emit();
   }
 }
